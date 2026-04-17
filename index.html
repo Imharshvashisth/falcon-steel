@@ -1,0 +1,3253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falcon Stainless Steel | Strength in Every Length</title>
+
+    <!-- Google Fonts: Montserrat (Headings) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:ital,wght@0,400;0,700;0,800;1,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           ROOT VARIABLES (YAHAN CHANGES NA KAREIN)
+           ========================================= */
+        :root {
+            /* Colors Extracted from Logo & Dark Theme Setup */
+            --fs-bg-dark: #050505;
+            /* True Dark Black */
+            --fs-bg-glass: rgba(5, 5, 5, 0.85);
+            /* Black Glass */
+            --fs-falcon-blue: #042D4B;
+            --fs-falcon-blue-light: #0A4A7A;
+            --fs-steel-silver: #C0C5CE;
+            --fs-text-white: #FFFFFF;
+            --fs-text-muted: #94A3B8;
+            --fs-accent-glow: #00D4FF;
+            /* Sexy hover effects ke liye */
+
+            /* Fonts */
+            --fs-font-heading: 'Montserrat', sans-serif;
+            --fs-font-body: 'Inter', sans-serif;
+
+            /* Transitions */
+            --fs-transition-fast: 0.3s ease;
+            --fs-transition-smooth: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* =========================================
+           BASE STYLES (MAIN SETUP)
+           ========================================= */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body {
+            background-color: var(--fs-bg-dark);
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-body);
+            overflow-x: hidden;
+            min-height: 200vh;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--fs-font-heading);
+            font-weight: 700;
+        }
+
+        /* Custom Scrollbar Premium Feel Ke Liye */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--fs-bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--fs-falcon-blue-light);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--fs-accent-glow);
+        }
+
+        /* Unique class name */
+        .falcon-agent-sticker-box {
+            position: fixed;
+            bottom: 0px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .falcon-agent-sticker-box img {
+            width: 210px;
+            /* adjust size */
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+
+        @media(max-width:756px) {
+            .falcon-agent-sticker-box img {
+                width: 110px;
+            }
+        }
+
+        /* Hover effect */
+        .falcon-agent-sticker-box img:hover {
+            transform: scale(1.1);
+        }
+
+        /* =========================================
+           SECTION 1: NAVBAR (HEADER) STYLES
+           ========================================= */
+        #fs-main-header {
+            background: transparent;
+            transition: var(--fs-transition-smooth);
+            /* padding: 20px 0; */
+            border-bottom: 1px solid transparent;
+        }
+
+        /* Scrolled state Navbar ke liye */
+        #fs-main-header.fs-scrolled {
+            background: var(--fs-bg-glass);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        /* LOGO WRAPPER WITH ROUNDED INDUSTRIAL WHITE SHAPE */
+        .fs-logo-wrapper {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 0px 45px 5px 0px;
+            z-index: 1;
+        }
+
+        /* Premium Rounded & Slanted White Design Element */
+        .fs-logo-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            bottom: -20px;
+            left: -50vw;
+            right: 0;
+            background: linear-gradient(to right, #ffffff, #f8f9fa);
+            transform: skewX(-18deg);
+            transform-origin: bottom;
+            border-radius: 0 35px 35px 0;
+            z-index: -1;
+            box-shadow: 10px 0 25px rgba(0, 0, 0, 0.7);
+            transition: var(--fs-transition-smooth);
+        }
+
+        /* Scroll hone par white shape ko adjust karein */
+        #fs-main-header.fs-scrolled .fs-logo-wrapper::before {
+            top: -10px;
+            bottom: -10px;
+            box-shadow: 8px 0 15px rgba(0, 0, 0, 0.8);
+        }
+
+        .fs-logo-wrapper:hover {
+            transform: translateY(-2px);
+        }
+
+        /* ENLARGED LOGO IMAGE */
+        .fs-logo-img {
+            height: 75px;
+            width: auto;
+            transition: var(--fs-transition-smooth);
+            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
+        }
+
+        .fs-logo-wrapper:hover .fs-logo-img {
+            transform: scale(1.03);
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+        }
+
+        .fs-nav-item {
+            margin: 0 18px;
+        }
+
+        .fs-nav-link {
+            font-family: var(--fs-font-heading);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--fs-text-muted) !important;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 8px 0 !important;
+            transition: var(--fs-transition-fast);
+        }
+
+        /* Extreme Hover Effect Links ke liye */
+        .fs-nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--fs-accent-glow);
+            transition: var(--fs-transition-smooth);
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px var(--fs-accent-glow);
+        }
+
+        .fs-nav-link:hover,
+        .fs-nav-link.active {
+            color: var(--fs-text-white) !important;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+
+        .fs-nav-link:hover::after,
+        .fs-nav-link.active::after {
+            width: 100%;
+        }
+
+        /* DROPDOWN STYLES */
+        .fs-dropdown-menu {
+            background: var(--fs-bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 10px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+            margin-top: 15px;
+            min-width: 220px;
+            transition: all 0.3s ease;
+        }
+
+        .fs-dropdown-item {
+            color: var(--fs-text-muted);
+            font-family: var(--fs-font-body);
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 10px 20px;
+            transition: var(--fs-transition-fast);
+            background: transparent;
+        }
+
+        .fs-dropdown-item:hover,
+        .fs-dropdown-item:focus {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--fs-text-white);
+            padding-left: 28px;
+            text-shadow: 0 0 5px rgba(0, 212, 255, 0.5);
+        }
+
+        /* Desktop Hover Dropdown ke liye */
+        @media (min-width: 992px) {
+            .fs-dropdown-wrapper .fs-dropdown-menu {
+                display: block;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(15px);
+            }
+
+            .fs-dropdown-wrapper:hover .fs-dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                margin-top: 0;
+            }
+        }
+
+        /* Premium Glow Button */
+        .fs-btn-quote {
+            background: linear-gradient(45deg, var(--fs-falcon-blue), var(--fs-falcon-blue-light));
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-heading);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: var(--fs-transition-smooth);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .fs-btn-quote::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--fs-accent-glow), var(--fs-falcon-blue));
+            z-index: -1;
+            opacity: 0;
+            transition: var(--fs-transition-smooth);
+        }
+
+        .fs-btn-quote:hover {
+            color: var(--fs-bg-dark);
+            border-color: var(--fs-accent-glow);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .fs-btn-quote:hover::before {
+            opacity: 1;
+        }
+
+        /* Mobile Navbar Toggler */
+        .navbar-toggler {
+            border: none;
+            color: var(--fs-text-white);
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* =========================================
+           SECTION 2: HERO SECTION WITH VIDEO BG
+           ========================================= */
+        #fs-hero-section {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .fs-video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: -2;
+            object-fit: cover;
+            filter: brightness(0.7) contrast(1.1);
+        }
+
+        .fs-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(5, 5, 5, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
+            z-index: -1;
+        }
+
+        .fs-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .fs-hero-subtitle {
+            color: var(--fs-accent-glow);
+            font-size: 1rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
+        }
+
+        .fs-hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            color: var(--fs-text-white);
+            text-shadow: 0px 5px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        .fs-hero-title .fs-text-glow {
+            background: linear-gradient(to right, #ffffff, var(--fs-accent-glow), #ffffff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shineText 3s linear infinite;
+        }
+
+        @keyframes shineText {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .fs-hero-desc {
+            font-size: 1.1rem;
+            color: var(--fs-steel-silver);
+            max-width: 700px;
+            margin: 0 auto 35px auto;
+            line-height: 1.6;
+            text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        .fs-hero-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .fs-btn-primary {
+            background: linear-gradient(45deg, var(--fs-falcon-blue), var(--fs-accent-glow));
+            color: var(--fs-text-white);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-family: var(--fs-font-heading);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            transition: var(--fs-transition-smooth);
+            border: none;
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .fs-btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.5);
+            color: var(--fs-text-white);
+        }
+
+        .fs-btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            color: var(--fs-text-white);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-family: var(--fs-font-heading);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            transition: var(--fs-transition-smooth);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .fs-btn-secondary:hover {
+            background: var(--fs-text-white);
+            color: var(--fs-bg-dark);
+            border-color: var(--fs-text-white);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Mouse Scroll Animation */
+        .fs-scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            opacity: 0.7;
+            transition: var(--fs-transition-fast);
+            z-index: 2;
+        }
+
+        .fs-scroll-indicator:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        .fs-scroll-indicator span {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--fs-steel-silver);
+        }
+
+        .fs-mouse {
+            width: 26px;
+            height: 42px;
+            border: 2px solid var(--fs-steel-silver);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .fs-wheel {
+            width: 4px;
+            height: 8px;
+            background: var(--fs-accent-glow);
+            border-radius: 2px;
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: fs-scrollWheel 1.5s infinite ease-in-out;
+        }
+
+        @keyframes fs-scrollWheel {
+            0% {
+                top: 6px;
+                opacity: 1;
+            }
+
+            100% {
+                top: 20px;
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fs-hero-title {
+                font-size: 2.2rem;
+            }
+
+            .fs-hero-subtitle {
+                font-size: 0.85rem;
+            }
+
+            .fs-hero-actions {
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+            }
+
+            .fs-btn-primary,
+            .fs-btn-secondary {
+                width: 80%;
+                justify-content: center;
+            }
+
+            .fs-nav-item {
+                margin: 10px 0;
+            }
+        }
+
+        /* =========================================
+           SECTION 3: ABOUT / OVERVIEW STYLES
+           ========================================= */
+        #fs-about-section {
+            background-color: var(--fs-bg-dark);
+            position: relative;
+            padding: 100px 0;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .fs-about-glow-bg {
+            position: absolute;
+            top: 20%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.08) 0%, rgba(5, 5, 5, 0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(50px);
+        }
+
+        .fs-section-subtitle {
+            color: var(--fs-accent-glow);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .fs-section-subtitle::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -60px;
+            width: 40px;
+            height: 2px;
+            background: var(--fs-accent-glow);
+            transform: translateY(-50%);
+            box-shadow: 0 0 8px var(--fs-accent-glow);
+        }
+
+        .fs-section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--fs-text-white);
+            line-height: 1.2;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .fs-section-title span {
+            color: var(--fs-steel-silver);
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .fs-about-text {
+            color: var(--fs-text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .fs-about-feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px 0;
+        }
+
+        .fs-about-feature-list li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 15px;
+            color: var(--fs-text-white);
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .fs-about-feature-list li i {
+            position: absolute;
+            left: 0;
+            top: 3px;
+            color: var(--fs-accent-glow);
+            font-size: 1.2rem;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+
+        /* Floating Premium Stat Boxes */
+        .fs-stats-row-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            position: relative;
+            margin-top: 60px;
+        }
+
+        .fs-stat-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--fs-transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fs-stat-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--fs-accent-glow), transparent);
+            opacity: 0.3;
+            transition: var(--fs-transition-smooth);
+        }
+
+        .fs-stat-box:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(0, 212, 255, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 212, 255, 0.05);
+        }
+
+        .fs-stat-box:hover::before {
+            opacity: 1;
+            box-shadow: 0 0 10px var(--fs-accent-glow);
+        }
+
+        .fs-stat-number {
+            font-family: var(--fs-font-heading);
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--fs-text-white);
+            margin-bottom: 5px;
+            line-height: 1;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .fs-stat-number span {
+            color: var(--fs-accent-glow);
+            font-size: 2rem;
+        }
+
+        .fs-stat-label {
+            font-size: 0.9rem;
+            color: var(--fs-steel-silver);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .fs-about-img-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .fs-about-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .fs-about-img-wrapper:hover .fs-about-img {
+            transform: scale(1.05);
+        }
+
+        .fs-about-img-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(5, 5, 5, 0.9), transparent);
+            pointer-events: none;
+        }
+
+        @media (max-width: 991px) {
+            .fs-section-title {
+                font-size: 2.2rem;
+            }
+
+            .fs-stats-row-grid {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: 40px;
+            }
+
+            .fs-about-img-wrapper {
+                margin-top: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .fs-stats-row-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* =========================================
+           SECTION 4: PRODUCTS SLIDER STYLES
+           ========================================= */
+        #fs-products-section {
+            background-color: #080C13;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .fs-product-header-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 50px;
+        }
+
+        .fs-slider-controls {
+            display: flex;
+            gap: 15px;
+        }
+
+        .fs-slider-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--fs-text-white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--fs-transition-fast);
+        }
+
+        .fs-slider-btn:hover {
+            border-color: var(--fs-accent-glow);
+            color: var(--fs-accent-glow);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .fs-product-track {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 20px 0 40px 0;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .fs-product-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .fs-product-card {
+            flex: 0 0 calc(33.333% - 20px);
+            scroll-snap-align: start;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--fs-transition-smooth);
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1;
+        }
+
+        .fs-product-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(45deg, var(--fs-falcon-blue), var(--fs-accent-glow), var(--fs-falcon-blue));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: var(--fs-transition-smooth);
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .fs-product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 212, 255, 0.15);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .fs-product-card:hover::before {
+            opacity: 1;
+        }
+
+        .fs-product-img-box {
+            width: 100%;
+            height: 260px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .fs-badge-top-seller {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #111;
+            color: var(--fs-text-white);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 8px 15px;
+            border: 1px solid var(--fs-accent-glow);
+            z-index: 5;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        .fs-product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
+            filter: grayscale(60%) brightness(0.8);
+        }
+
+        .fs-product-card:hover .fs-product-img {
+            transform: scale(1.1);
+            filter: grayscale(0%) brightness(1);
+        }
+
+        .fs-product-content {
+            padding: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .fs-product-title {
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-heading);
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            transition: var(--fs-transition-fast);
+        }
+
+        .fs-product-card:hover .fs-product-title {
+            color: var(--fs-accent-glow);
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        .fs-product-desc {
+            color: var(--fs-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .fs-product-link {
+            color: var(--fs-steel-silver);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--fs-transition-fast);
+        }
+
+        .fs-product-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .fs-product-card:hover .fs-product-link {
+            color: var(--fs-accent-glow);
+        }
+
+        .fs-product-card:hover .fs-product-link i {
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 991px) {
+            .fs-product-card {
+                flex: 0 0 calc(50% - 15px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fs-product-header-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .fs-product-card {
+                flex: 0 0 100%;
+            }
+        }
+
+        /* =========================================
+           SECTION 5: GLOBAL IMPACT & MILESTONES
+           ========================================= */
+        #fs-impact-section {
+            position: relative;
+            padding: 100px 0;
+            background-image: url('assets/images/backgrounds/global-bg2.jpeg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 1;
+        }
+
+        .fs-impact-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 5, 5, 0.501);
+            z-index: -1;
+        }
+
+        .fs-impact-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .fs-impact-header .fs-section-title {
+            color: var(--fs-text-white);
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+
+        .fs-impact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .fs-impact-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 20px;
+            text-align: center;
+            height: 100%;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fs-impact-card:hover,
+        .fs-impact-card.active {
+            background: var(--fs-falcon-blue);
+            border-color: var(--fs-falcon-blue-light);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+        }
+
+        .fs-impact-card-title {
+            font-family: var(--fs-font-heading);
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--fs-text-white);
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            transition: var(--fs-transition-fast);
+        }
+
+        .fs-impact-circle {
+            width: 150px;
+            height: 150px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px auto;
+            transition: all 0.4s ease;
+        }
+
+        .fs-impact-circle span {
+            font-family: var(--fs-font-heading);
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--fs-text-white);
+            transition: var(--fs-transition-fast);
+        }
+
+        .fs-impact-card:hover .fs-impact-circle,
+        .fs-impact-card.active .fs-impact-circle {
+            border-color: var(--fs-text-white);
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .fs-impact-desc {
+            color: var(--fs-text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            transition: var(--fs-transition-fast);
+        }
+
+        .fs-impact-card:hover .fs-impact-desc,
+        .fs-impact-card.active .fs-impact-desc {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .fs-impact-footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .fs-impact-footer h3 {
+            font-family: var(--fs-font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--fs-text-white);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .fs-impact-footer p {
+            color: var(--fs-text-muted);
+            font-size: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 1199px) {
+            .fs-impact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fs-impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* =========================================
+           SECTION 6: ADVANCED QUALITY BENTO GRID
+           ========================================= */
+        #fs-quality-section {
+            background-color: var(--fs-bg-dark);
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+            background-image:
+                linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .fs-quality-bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, var(--fs-bg-dark) 80%);
+            pointer-events: none;
+        }
+
+        .fs-quality-sticky-panel {
+            position: sticky;
+            top: 150px;
+        }
+
+        .fs-quality-sticky-panel .fs-section-title {
+            margin-bottom: 25px;
+        }
+
+        .fs-iso-badge-wrapper {
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(10, 14, 20, 0.9);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            padding: 20px 30px;
+            border-radius: 20px;
+            margin-top: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 212, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fs-iso-badge-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: skewX(-20deg);
+            animation: isoShine 4s infinite;
+        }
+
+        @keyframes isoShine {
+            0% {
+                left: -100%;
+            }
+
+            20%,
+            100% {
+                left: 200%;
+            }
+        }
+
+        .fs-iso-icon-container {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--fs-falcon-blue), #000);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--fs-accent-glow);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            flex-shrink: 0;
+        }
+
+        .fs-iso-icon-container i {
+            font-size: 1.8rem;
+            color: var(--fs-text-white);
+        }
+
+        .fs-iso-text h4 {
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-heading);
+            margin: 0 0 5px 0;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .fs-iso-text p {
+            margin: 0;
+            color: var(--fs-accent-glow);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .fs-bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .fs-bento-card {
+            background: #0a0e14;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 1;
+        }
+
+        .fs-bento-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right, rgba(0, 212, 255, 0.15), transparent 70%);
+            opacity: 0;
+            transition: var(--fs-transition-smooth);
+            z-index: -1;
+        }
+
+        .fs-bento-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: var(--fs-accent-glow);
+            transition: var(--fs-transition-smooth);
+            box-shadow: 0 0 15px var(--fs-accent-glow);
+        }
+
+        .fs-bento-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 212, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), inset 0 0 40px rgba(0, 212, 255, 0.05);
+        }
+
+        .fs-bento-card:hover::before {
+            opacity: 1;
+        }
+
+        .fs-bento-card:hover::after {
+            width: 100%;
+        }
+
+        .fs-bento-icon {
+            font-size: 2.5rem;
+            color: var(--fs-steel-silver);
+            margin-bottom: 25px;
+            transition: var(--fs-transition-smooth);
+            display: inline-block;
+        }
+
+        .fs-bento-card:hover .fs-bento-icon {
+            color: var(--fs-accent-glow);
+            transform: translateY(-10px) scale(1.1);
+            filter: drop-shadow(0 10px 10px rgba(0, 212, 255, 0.4));
+        }
+
+        .fs-bento-title {
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .fs-bento-desc {
+            color: var(--fs-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .fs-bento-grid .fs-bento-card:nth-child(even) {
+            margin-top: 40px;
+        }
+
+        @media (max-width: 991px) {
+            .fs-quality-sticky-panel {
+                position: relative;
+                top: 0;
+                margin-bottom: 60px;
+            }
+
+            .fs-bento-grid .fs-bento-card:nth-child(even) {
+                margin-top: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .fs-bento-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* =========================================
+           SECTION 7: CLIENT TESTIMONIALS & PARTNERSHIPS
+           ========================================= */
+        #fs-testimonial-section {
+            position: relative;
+            padding: 120px 0;
+            background-image: url('assets/images/backgrounds/testi-bg.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: 1;
+        }
+
+        .fs-testi-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(5, 5, 5, 0.85);
+            z-index: -1;
+        }
+
+        .fs-testi-cert-box {
+            transition: var(--fs-transition-smooth);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fs-testi-cert-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .fs-testi-cert-img {
+            width: 100%;
+            max-height: 450px;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            border-radius: 8px;
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.8));
+        }
+
+        .fs-testi-content-wrap {
+            padding-left: 40px;
+        }
+
+        .fs-testi-slider-viewport {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .fs-testi-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            width: 100%;
+        }
+
+        .fs-testi-slide {
+            flex: 0 0 100%;
+            padding-right: 20px;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.6s ease;
+        }
+
+        .fs-testi-slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .fs-testi-quote {
+            font-family: var(--fs-font-body);
+            font-size: 1.6rem;
+            line-height: 1.6;
+            color: var(--fs-steel-silver);
+            font-style: italic;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .fs-testi-quote::before {
+            content: '\201C';
+            font-family: var(--fs-font-heading);
+            font-size: 4rem;
+            color: rgba(0, 212, 255, 0.2);
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            z-index: -1;
+        }
+
+        .fs-testi-author {
+            font-family: var(--fs-font-heading);
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--fs-text-white);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .fs-testi-designation {
+            color: var(--fs-accent-glow);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .fs-testi-controls-wrapper {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 991px) {
+            .fs-testi-content-wrap {
+                padding-left: 0;
+                margin-top: 50px;
+            }
+
+            .fs-testi-quote {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* =========================================
+           SECTION 8: SUPPORT & RESOURCES (NEW)
+           ========================================= */
+        #fs-support-section {
+            position: relative;
+            padding: 120px 0;
+            background-image: url('assets/images/backgrounds/support-bg.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: 1;
+        }
+
+        .fs-support-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(5, 5, 5, 0.477), rgba(5, 5, 5, 0.431));
+            z-index: -1;
+        }
+
+        .fs-support-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .fs-support-header .fs-section-subtitle {
+            background: rgba(0, 212, 255, 0.1);
+            padding: 5px 15px;
+            border-radius: 50px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            color: var(--fs-accent-glow);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .fs-support-header .fs-section-subtitle::after {
+            display: none;
+        }
+
+        .fs-support-header .fs-section-title {
+            color: var(--fs-text-white);
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-transform: none;
+            /* Matching reference style */
+        }
+
+        .fs-support-header p {
+            color: var(--fs-text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .fs-support-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .fs-support-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Hover Glowing Effect from bottom */
+        .fs-support-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(to top, rgba(0, 212, 255, 0.1), transparent);
+            transition: height 0.4s ease;
+            z-index: -1;
+        }
+
+        .fs-support-card:hover::after {
+            height: 100%;
+        }
+
+        .fs-support-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 212, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .fs-support-tag {
+            color: var(--fs-accent-glow);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .fs-support-title {
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-heading);
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .fs-support-desc {
+            color: var(--fs-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .fs-support-link {
+            margin-top: auto;
+            /* Pushes link to the bottom */
+            color: var(--fs-text-white);
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            transition: all 0.3s;
+        }
+
+        .fs-support-link i {
+            color: var(--fs-steel-silver);
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .fs-support-card:hover .fs-support-link {
+            color: var(--fs-accent-glow);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .fs-support-card:hover .fs-support-link i {
+            color: var(--fs-accent-glow);
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 1199px) {
+            .fs-support-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fs-support-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fs-support-header .fs-section-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* =========================================
+           SECTION 9: GALLERY (REFERENCE MASONRY LAYOUT)
+           ========================================= */
+        #fs-gallery-section {
+            background-color: #FFFFFF;
+            /* Bright contrast section */
+            padding: 100px 0;
+            position: relative;
+        }
+
+        /* Headers styling customized to match reference */
+        .fs-gallery-header {
+            margin-bottom: 50px;
+        }
+
+        .fs-gallery-header .fs-ref-subtitle {
+            color: #333;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        /* Line before the subtitle to match exact reference */
+        .fs-gallery-header .fs-ref-subtitle::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: #e74c3c;
+            /* Reference uses a red-ish accent line here */
+        }
+
+        .fs-gallery-header .fs-ref-title {
+            color: #111;
+            /* Dark text on white BG */
+            font-size: 2.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .fs-gallery-header .fs-ref-title span {
+            color: #e74c3c;
+            /* Exact reference highlight color */
+        }
+
+        /* Asymmetric Grid Layout based exactly on the reference image */
+        .fs-gallery-grid-new {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 equal columns */
+            grid-auto-rows: 250px;
+            /* Base row height */
+            gap: 15px;
+        }
+
+        .fs-gallery-item-new {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            /* Clean sharp edges like reference */
+            cursor: pointer;
+            background: #f0f0f0;
+        }
+
+        /* Class overrides to map items to the grid layout */
+        .fs-grid-large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .fs-grid-wide {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        /* Single standard items automatically span 1x1 */
+
+        .fs-gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .fs-gallery-item-new:hover .fs-gallery-img {
+            transform: scale(1.08);
+        }
+
+        /* Dark Premium Overlay on Hover */
+        .fs-gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(4, 45, 75, 0.85);
+            /* Falcon Blue Overlay */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            opacity: 0;
+            transition: var(--fs-transition-smooth);
+        }
+
+        .fs-gallery-item-new:hover .fs-gallery-overlay {
+            opacity: 1;
+        }
+
+        .fs-gallery-overlay i {
+            color: var(--fs-text-white);
+            font-size: 2.5rem;
+            transform: translateY(20px);
+            transition: var(--fs-transition-smooth);
+        }
+
+        .fs-gallery-overlay span {
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-heading);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transform: translateY(20px);
+            transition: var(--fs-transition-smooth);
+            opacity: 0;
+        }
+
+        .fs-gallery-item-new:hover .fs-gallery-overlay i,
+        .fs-gallery-item-new:hover .fs-gallery-overlay span {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .fs-gallery-item-new:hover .fs-gallery-overlay span {
+            transition-delay: 0.1s;
+        }
+
+        @media (max-width: 991px) {
+            .fs-gallery-grid-new {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .fs-grid-large {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+            .fs-grid-wide {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .fs-gallery-grid-new {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 200px;
+            }
+
+            .fs-grid-large,
+            .fs-grid-wide {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+        }
+
+        /* Light Theme Button Customization */
+        .fs-btn-dark {
+            background: var(--fs-falcon-blue);
+            color: var(--fs-text-white);
+            border: 2px solid transparent;
+            box-shadow: 0 10px 20px rgba(4, 45, 75, 0.2);
+        }
+
+        .fs-btn-dark::before {
+            background: var(--fs-bg-dark);
+        }
+
+        .fs-btn-dark:hover {
+            color: var(--fs-text-white);
+            border-color: var(--fs-falcon-blue);
+            box-shadow: 0 15px 30px rgba(4, 45, 75, 0.4);
+        }
+
+        /* =========================================
+           SECTION 10: CALL TO ACTION (LIGHT THEME)
+           ========================================= */
+        #fs-cta-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .fs-cta-subtitle {
+            color: var(--fs-falcon-blue);
+            font-size: 1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .fs-cta-title {
+            color: var(--fs-bg-dark);
+            font-family: var(--fs-font-heading);
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .fs-cta-title span {
+            color: var(--fs-falcon-blue);
+        }
+
+        .fs-cta-desc {
+            color: #555;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
+        }
+
+        .fs-cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .fs-btn-whatsapp,
+        .fs-btn-call {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-family: var(--fs-font-heading);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: var(--fs-transition-smooth);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .fs-btn-whatsapp {
+            background-color: #25D366;
+            color: #ffffff;
+            border: 2px solid transparent;
+        }
+
+        .fs-btn-whatsapp:hover {
+            background-color: #1ebe57;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+            color: #ffffff;
+        }
+
+        .fs-btn-call {
+            background-color: var(--fs-falcon-blue);
+            color: #ffffff;
+            border: 2px solid transparent;
+        }
+
+        .fs-btn-call:hover {
+            background-color: var(--fs-bg-dark);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(4, 45, 75, 0.4);
+            color: #ffffff;
+        }
+
+        .fs-btn-whatsapp i,
+        .fs-btn-call i {
+            font-size: 1.3rem;
+        }
+
+        @media (max-width: 768px) {
+            .fs-cta-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* =========================================
+           SECTION 11: MEGA FOOTER STYLES
+           ========================================= */
+        #fs-footer {
+            background-color: #030609;
+            /* Very dark background to contrast with CTA */
+            position: relative;
+            color: var(--fs-text-muted);
+            font-family: var(--fs-font-body);
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* Glowing Top Border */
+        .fs-footer-top-border {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--fs-accent-glow), var(--fs-falcon-blue), transparent);
+            box-shadow: 0 0 20px var(--fs-accent-glow);
+        }
+
+        /* Subtle Background Elements */
+        #fs-footer::before {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .fs-footer-logo {
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .fs-footer-logo img {
+            height: 65px;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+            transition: var(--fs-transition-smooth);
+        }
+
+        .fs-footer-logo:hover img {
+            filter: drop-shadow(0 0 15px var(--fs-accent-glow));
+            transform: scale(1.05);
+        }
+
+        .fs-footer-about {
+            line-height: 1.7;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            max-width: 90%;
+        }
+
+        .fs-footer-socials {
+            display: flex;
+            gap: 15px;
+        }
+
+        .fs-footer-socials a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--fs-text-white);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--fs-transition-fast);
+            font-size: 1.2rem;
+        }
+
+        .fs-footer-socials a:hover {
+            background: var(--fs-falcon-blue);
+            border-color: var(--fs-accent-glow);
+            color: var(--fs-accent-glow);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .fs-footer-heading {
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .fs-footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--fs-accent-glow);
+            box-shadow: 0 0 10px var(--fs-accent-glow);
+        }
+
+        .fs-footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .fs-footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .fs-footer-links a {
+            color: var(--fs-text-muted);
+            text-decoration: none;
+            transition: var(--fs-transition-fast);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 400;
+        }
+
+        .fs-footer-links a i {
+            font-size: 0.7rem;
+            color: var(--fs-steel-silver);
+            transition: var(--fs-transition-fast);
+        }
+
+        .fs-footer-links a:hover {
+            color: var(--fs-accent-glow);
+            transform: translateX(5px);
+        }
+
+        .fs-footer-links a:hover i {
+            color: var(--fs-accent-glow);
+        }
+
+        .fs-footer-contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .fs-footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .fs-footer-contact li i {
+            color: var(--fs-accent-glow);
+            font-size: 1.2rem;
+            margin-top: 4px;
+        }
+
+        .fs-footer-contact li span {
+            color: var(--fs-text-muted);
+            font-size: 0.95rem;
+        }
+
+        .fs-footer-bottom {
+            background: #010203;
+            padding: 25px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        .fs-footer-bottom p {
+            margin: 0;
+            color: var(--fs-text-muted);
+        }
+
+        .fs-footer-bottom a {
+            color: var(--fs-text-muted);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: var(--fs-transition-fast);
+            position: relative;
+        }
+
+        .fs-footer-bottom a:hover {
+            color: var(--fs-accent-glow);
+        }
+
+        @media (max-width: 991px) {
+            .fs-footer-heading {
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fs-footer-bottom .text-md-end {
+                margin-top: 15px;
+            }
+
+            .fs-footer-bottom a {
+                margin: 0 10px;
+            }
+        }
+
+        /* =========================================
+           IMAGE LIGHTBOX STYLES (FULLSCREEN KE LIYE)
+           ========================================= */
+        .fs-lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .fs-lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .fs-lightbox-img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
+            transform: scale(0.8);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            object-fit: contain;
+        }
+
+        .fs-lightbox.active .fs-lightbox-img {
+            transform: scale(1);
+        }
+
+        .fs-lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: var(--fs-text-white);
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: var(--fs-transition-fast);
+        }
+
+        .fs-lightbox-close:hover {
+            color: var(--fs-accent-glow);
+            transform: scale(1.1) rotate(90deg);
+        }
+
+
+        /* =========================================
+           FLOATING SOCIAL BUTTONS (RIGHT EDGE)
+           ========================================= */
+        .fs-floating-socials {
+            position: fixed;
+            left: 20px;
+            bottom: 20%;
+            transform: translateY(50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .fs-social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.4rem;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: var(--fs-transition-fast);
+            position: relative;
+        }
+
+        .fs-social-whatsapp {
+            background-color: #25D366;
+        }
+
+        .fs-social-phone {
+            background-color: #D93025;
+        }
+
+        .fs-social-email {
+            background-color: #4A90E2;
+        }
+
+        .fs-social-btn:hover {
+            transform: scale(1.1) translateX(-5px);
+            color: #fff;
+        }
+
+        .fs-social-whatsapp:hover {
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .fs-social-phone:hover {
+            box-shadow: 0 0 20px rgba(217, 48, 37, 0.6);
+        }
+
+        .fs-social-email:hover {
+            box-shadow: 0 0 20px rgba(74, 144, 226, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .fs-floating-socials {
+                bottom: 20px;
+                transform: none;
+                flex-direction: row;
+                left: -10%;
+                transform: translateX(50%);
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <!-- Agent Sticker -->
+    <div class="falcon-agent-sticker-box">
+        <img src="assets/images/logo/agent-1.png" alt="Falcon Steel Agent">
+    </div>
+
+    <!-- FLOATING SOCIALS -->
+    <div class="fs-floating-socials">
+        <a href="tel:+919896188840" class="fs-social-btn fs-social-phone" title="Call Us">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+
+        <a href="mailto:falcoonsteel0001@gmail.com" class="fs-social-btn fs-social-email" title="Email Us">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <a href="https://wa.me/919896188840" class="fs-social-btn fs-social-whatsapp" title="WhatsApp Us"
+            target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- =========================================
+         SECTION 1: NAVBAR (HEADER)
+         ========================================= -->
+    <nav id="fs-main-header" class="navbar navbar-expand-lg fixed-top">
+        <div class="container" data-aos="fade-down" data-aos-duration="1000">
+            <!-- Logo with Clean Rounded White Half-Pill Shape -->
+            <a class="navbar-brand fs-logo-wrapper" href="#">
+                <img src="assets/images/logo/falcon-logo.PNG" alt="Falcon Steel Logo" class="fs-logo-img">
+            </a>
+
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#fsNavbarContent"
+                aria-controls="fsNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav Links -->
+            <div class="collapse navbar-collapse" id="fsNavbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item fs-nav-item">
+                        <a class="nav-link fs-nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item fs-nav-item">
+                        <a class="nav-link fs-nav-link" href="#about">About</a>
+                    </li>
+
+                    <!-- Dropdown for Products -->
+                    <li class="nav-item dropdown fs-nav-item fs-dropdown-wrapper">
+                        <a class="nav-link dropdown-toggle fs-nav-link" href="#products" id="fsNavbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu fs-dropdown-menu" aria-labelledby="fsNavbarDropdown">
+                            <li><a class="dropdown-item fs-dropdown-item" href="#">SS Round Tubes</a></li>
+                            <li><a class="dropdown-item fs-dropdown-item" href="#">SS Square Tubes</a></li>
+                            <li><a class="dropdown-item fs-dropdown-item" href="#">SS Rectangle Tubes</a></li>
+                            <li><a class="dropdown-item fs-dropdown-item" href="#">SS Oval Tubes</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item fs-nav-item">
+                        <a class="nav-link fs-nav-link" href="#quality">Quality</a>
+                    </li>
+                    <li class="nav-item fs-nav-item">
+                        <a class="nav-link fs-nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Action Button -->
+                <div class="d-flex">
+                    <a href="#quote" class="fs-btn-quote">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =========================================
+         SECTION 2: HERO SECTION WITH VIDEO BG
+         ========================================= -->
+    <section id="fs-hero-section">
+        <!-- Background Video Updated with new URL -->
+        <video autoplay muted loop playsinline id="fs-hero-video" class="fs-video-bg">
+            <source src="assets/images/banner/home-ban-3.mp4" type="video/mp4">
+        </video>
+
+        <!-- Dark Overlay Gradient -->
+        <div class="fs-hero-overlay"></div>
+
+        <!-- Hero Content -->
+        <div class="container fs-hero-content text-center">
+            <h5 data-aos="fade-up" class="fs-hero-subtitle"><i class="fa-solid fa-gem me-2"></i> India's Premier
+                Manufacturer</h5>
+            <h1 data-aos="zoom-in" data-aos-delay="200" class="fs-hero-title">Strength In <br><span
+                    class="fs-text-glow">Every Length</span></h1>
+            <p data-aos="fade-up" data-aos-delay="400" class="fs-hero-desc">Experience unmatched durability with our
+                premium range of Stainless Steel Round, Square, Rectangle & Oval Tubes. Built to last, engineered to
+                perfection.</p>
+
+            <div data-aos="fade-up" data-aos-delay="600" class="fs-hero-actions">
+                <a href="#products" class="fs-btn-primary">Explore Products <i
+                        class="fa-solid fa-arrow-right ms-2"></i></a>
+                <a href="#about" class="fs-btn-secondary"><i class="fa-solid fa-play"></i> Factory Tour</a>
+            </div>
+        </div>
+
+        <!-- Interactive Mouse Scroll Indicator -->
+        <div class="fs-scroll-indicator">
+            <span>Scroll</span>
+            <div class="fs-mouse">
+                <div class="fs-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 3: ABOUT / COMPANY OVERVIEW
+         ========================================= -->
+    <section id="fs-about-section">
+        <!-- Abstract Background Glow -->
+        <div class="fs-about-glow-bg"></div>
+
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- Left Content: Text & Features -->
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
+                    <span class="fs-section-subtitle">The Falcon Legacy</span>
+                    <h2 class="fs-section-title">Forging the Future of <span>Stainless Steel</span></h2>
+
+                    <p class="fs-about-text">
+                        Welcome to Falcon Stainless Steel, India’s premier manufacturing powerhouse. We don't just
+                        produce pipes and tubes; we engineer precision and strength that stand the test of time. With
+                        state-of-the-art facilities and an unyielding commitment to quality, we deliver excellence in
+                        every single length.
+                    </p>
+
+                    <ul class="fs-about-feature-list mb-4">
+                        <li data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-check-double"></i> Premium
+                            Grade SS 304 / 316L Materials</li>
+                        <li data-aos="fade-up" data-aos-delay="200"><i class="fa-solid fa-check-double"></i>
+                            Zero-Tolerance Quality Control Process</li>
+                        <li data-aos="fade-up" data-aos-delay="300"><i class="fa-solid fa-check-double"></i> Nationwide
+                            Distribution Network</li>
+                    </ul>
+
+                    <div data-aos="fade-up" data-aos-delay="400">
+                        <a href="#about" class="fs-btn-secondary"
+                            style="border-color: var(--fs-accent-glow); color: var(--fs-accent-glow);">
+                            Read Our Story <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Content: Image -->
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="fs-about-img-wrapper">
+                        <!-- Placeholder image, replace with actual factory/production image -->
+                        <img src="assets/images/about-us/abt-right.jpeg" alt="Falcon Steel Manufacturing Facility"
+                            class="fs-about-img">
+                        <div class="fs-about-img-overlay"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Content: Stats Grid -->
+            <div class="fs-stats-row-grid" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+
+                <!-- Stat 1 -->
+                <div class="fs-stat-box">
+                    <div class="fs-stat-number">15<span>+</span></div>
+                    <div class="fs-stat-label">Years of Mastery</div>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="fs-stat-box">
+                    <div class="fs-stat-number">50<span>k</span></div>
+                    <div class="fs-stat-label">Tons Manufactured</div>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="fs-stat-box">
+                    <div class="fs-stat-number">100<span>%</span></div>
+                    <div class="fs-stat-label">Quality Assured</div>
+                </div>
+
+                <!-- Stat 4 -->
+                <div class="fs-stat-box">
+                    <div class="fs-stat-number">10<span>k+</span></div>
+                    <div class="fs-stat-label">Happy Clients</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 4: PRODUCTS SECTION (SLIDER LAYOUT)
+         ========================================= -->
+    <section id="fs-products-section">
+        <div class="container">
+
+            <!-- Section Header with Navigation Controls -->
+            <div class="fs-product-header-wrapper" data-aos="fade-up" data-aos-duration="1000">
+                <div>
+                    <span class="fs-section-subtitle">What We Craft</span>
+                    <h2 class="fs-section-title mb-0">Our Premium Products</h2>
+                </div>
+
+                <!-- Custom Slider Arrows -->
+                <div class="fs-slider-controls">
+                    <button class="fs-slider-btn" id="fs-slider-prev" aria-label="Previous Product">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button class="fs-slider-btn" id="fs-slider-next" aria-label="Next Product">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Products Slider Track -->
+            <div class="fs-product-track" id="fs-product-slider" data-aos="fade-up" data-aos-delay="200">
+
+                <!-- Product 1: SS Round Tubes (TOP SELLER) -->
+                <div class="fs-product-card">
+                    <div class="fs-product-img-box">
+                        <span class="fs-badge-top-seller">Top Seller</span>
+                        <img src="https://www.raviseamless.com/assets/images/products/ss-erw-od-pipes.jpeg"
+                            alt="SS Round Tubes & Pipes" class="fs-product-img">
+                    </div>
+                    <div class="fs-product-content">
+                        <h3 class="fs-product-title">SS Round Tubes & Pipes</h3>
+                        <p class="fs-product-desc">Perfectly engineered circular tubes offering superior structural
+                            integrity and fluid transportation capabilities.</p>
+                        <a href="#" class="fs-product-link">Explore Details <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 2: SS Square Tubes -->
+                <div class="fs-product-card">
+                    <div class="fs-product-img-box">
+                        <img src="https://www.raviseamless.com/assets/images/products/welded-square-pipes.jpeg"
+                            alt="SS Square Tubes & Pipes" class="fs-product-img">
+                    </div>
+                    <div class="fs-product-content">
+                        <h3 class="fs-product-title">SS Square Tubes & Pipes</h3>
+                        <p class="fs-product-desc">High-strength square profiles ideal for modern architectural framing,
+                            support structures, and industrial design.</p>
+                        <a href="#" class="fs-product-link">Explore Details <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 3: SS Rectangle Tubes -->
+                <div class="fs-product-card">
+                    <div class="fs-product-img-box">
+                        <img src="https://www.raviseamless.com/assets/images/products/ss-welded-rectangular-pipes.jpeg"
+                            alt="SS Rectangle Tubes" class="fs-product-img">
+                    </div>
+                    <div class="fs-product-content">
+                        <h3 class="fs-product-title">SS Rectangle Tubes</h3>
+                        <p class="fs-product-desc">Durable rectangular pipes providing excellent load-bearing capacity
+                            for heavy-duty construction projects.</p>
+                        <a href="#" class="fs-product-link">Explore Details <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 4: SS Oval Tubes -->
+                <div class="fs-product-card">
+                    <div class="fs-product-img-box">
+                        <img src="https://www.raviseamless.com/assets/images/products/welded-oval-pipes.jpeg"
+                            alt="SS Oval Tubes" class="fs-product-img">
+                    </div>
+                    <div class="fs-product-content">
+                        <h3 class="fs-product-title">SS Oval Tubes</h3>
+                        <p class="fs-product-desc">Sleek, aerodynamic oval tubes crafted specifically for modern
+                            furniture and premium interior architectural designs.</p>
+                        <a href="#" class="fs-product-link">Explore Details <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 5: Custom SS Profiles -->
+                <div class="fs-product-card">
+                    <div class="fs-product-img-box">
+                        <img src="https://www.raviseamless.com/assets/images/products/coils-and-strips.jpeg"
+                            alt="Custom SS Profiles" class="fs-product-img">
+                    </div>
+                    <div class="fs-product-content">
+                        <h3 class="fs-product-title">Custom SS Profiles</h3>
+                        <p class="fs-product-desc">Tailor-made stainless steel profiles manufactured to precise client
+                            specifications for specialized applications.</p>
+                        <a href="#" class="fs-product-link">Explore Details <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =========================================
+         SECTION 5: CALL TO ACTION (LIGHT THEME)
+         ========================================= -->
+    <section id="fs-cta-section">
+        <div class="container">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <span class="fs-cta-subtitle">Let's Build Together</span>
+                <h2 class="fs-cta-title">We Are The Best Partner For Your <span>Next Project</span></h2>
+                <p class="fs-cta-desc">Ready to experience unmatched quality and timely delivery? Get in touch with our
+                    experts today via Call or WhatsApp to discuss your requirements.</p>
+
+                <div class="fs-cta-buttons">
+                    <a href="tel:+919896188840" class="fs-btn-call">
+                        <i class="fa-solid fa-phone"></i> Call Us Now
+                    </a>
+                    <a href="https://wa.me/919896188840" class="fs-btn-whatsapp" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================
+         SECTION 6: GLOBAL IMPACT & MILESTONES
+         ========================================= -->
+    <section id="fs-impact-section">
+        <div class="fs-impact-overlay"></div>
+        <div class="container">
+
+            <div class="fs-impact-header" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="fs-section-title">Our Global Impact & <span>Milestones</span></h2>
+            </div>
+
+            <div class="fs-impact-grid">
+
+                <!-- Card 1 (ADDED 'active' class so it shows hover effect by default) -->
+                <div class="fs-impact-card active" data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="fs-impact-card-title">450 KW Solar</h4>
+                    <div class="fs-impact-circle">
+                        <span>450 KW</span>
+                    </div>
+                    <p class="fs-impact-desc">Clean energy adoption supports sustainable manufacturing, reducing
+                        dependence on conventional power sources for responsible operations.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="fs-impact-card" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="fs-impact-card-title">Clients Served</h4>
+                    <div class="fs-impact-circle">
+                        <span>550+</span>
+                    </div>
+                    <p class="fs-impact-desc">Serving diverse industries with reliable supply, consistent quality, and
+                        long-term partnerships built on trust.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="fs-impact-card" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="fs-impact-card-title">Support Local Economy</h4>
+                    <div class="fs-impact-circle">
+                        <span>100%</span>
+                    </div>
+                    <p class="fs-impact-desc">Locally sourced manufacturing supports regional growth, employment
+                        generation, and stronger supply chains aligned with initiatives.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="fs-impact-card" data-aos="fade-up" data-aos-delay="400">
+                    <h4 class="fs-impact-card-title">Hours of Production</h4>
+                    <div class="fs-impact-circle">
+                        <span>8000+</span>
+                    </div>
+                    <p class="fs-impact-desc">Maintaining 8,000 hours of annual production with operational precision,
+                        ensuring consistent output, and timely delivery across varied industrial requirements.</p>
+                </div>
+
+            </div>
+
+            <!-- Bottom Content (Footer of Impact Section) -->
+            <div class="fs-impact-footer" data-aos="fade-up" data-aos-delay="500">
+                <h3>Sustainable Development & Social Contribution</h3>
+                <p>Our Corporate Social Responsibility strategy plays a crucial role in our activities. We look beyond,
+                    envisioning a world of robust infrastructure built with respect for the environment and better
+                    living conditions.</p>
+                <div class="mt-4">
+                    <a href="#sustainability" class="fs-btn-secondary"
+                        style="border-color: var(--fs-accent-glow); color: var(--fs-accent-glow);">
+                        Learn More <i class="fa-solid fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 7: ADVANCED QUALITY BENTO GRID
+         ========================================= -->
+    <section id="fs-quality-section">
+        <div class="fs-quality-bg-overlay"></div>
+        <div class="container position-relative z-index-2">
+            <div class="row">
+
+                <!-- Sticky Left Content -->
+                <div class="col-lg-5" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="fs-quality-sticky-panel">
+                        <span class="fs-section-subtitle">Uncompromising Standards</span>
+                        <h2 class="fs-section-title">Zero-Tolerance <br><span>Quality Control</span></h2>
+                        <p class="fs-about-text pe-lg-4">
+                            Every single Falcon Steel tube undergoes a rigorous, multi-stage testing protocol. We
+                            utilize advanced metallurgical and mechanical testing facilities to guarantee international
+                            compliance, superior strength, and ultimate durability for the most demanding applications.
+                        </p>
+
+                        <!-- Premium ISO Badge -->
+                        <div class="fs-iso-badge-wrapper">
+                            <div class="fs-iso-icon-container">
+                                <i class="fa-solid fa-certificate"></i>
+                            </div>
+                            <div class="fs-iso-text">
+                                <h4>ISO 9001:2015</h4>
+                                <p>Certified Company</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content: Bento Grid -->
+                <div class="col-lg-7 mt-5 mt-lg-0" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="fs-bento-grid">
+
+                        <!-- Bento Card 1 -->
+                        <div class="fs-bento-card">
+                            <i class="fa-solid fa-microscope fs-bento-icon"></i>
+                            <h3 class="fs-bento-title">Chemical Analysis</h3>
+                            <p class="fs-bento-desc">Advanced optical emission spectrometers ensure exact material
+                                composition and purity in every steel batch.</p>
+                        </div>
+
+                        <!-- Bento Card 2 -->
+                        <div class="fs-bento-card">
+                            <i class="fa-solid fa-water fs-bento-icon"></i>
+                            <h3 class="fs-bento-title">Hydrostatic Test</h3>
+                            <p class="fs-bento-desc">100% of our pressure pipes are tested to withstand extreme internal
+                                pressure without any leakage.</p>
+                        </div>
+
+                        <!-- Bento Card 3 -->
+                        <div class="fs-bento-card">
+                            <i class="fa-solid fa-magnifying-glass-chart fs-bento-icon"></i>
+                            <h3 class="fs-bento-title">Eddy Current</h3>
+                            <p class="fs-bento-desc">Non-destructive electromagnetic testing detects even the smallest
+                                microscopic surface or sub-surface flaws.</p>
+                        </div>
+
+                        <!-- Bento Card 4 -->
+                        <div class="fs-bento-card">
+                            <i class="fa-solid fa-weight-hanging fs-bento-icon"></i>
+                            <h3 class="fs-bento-title">Mechanical Test</h3>
+                            <p class="fs-bento-desc">Tensile, yield, and elongation tests verify that our steel exceeds
+                                required structural strength and flexibility.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 8: CLIENT TESTIMONIALS & PARTNERSHIPS
+         ========================================= -->
+    <section id="fs-testimonial-section">
+        <div class="fs-testi-overlay"></div>
+        <div class="container position-relative z-index-2">
+            <div class="row align-items-center">
+
+                <!-- Left: Clean Certificate / Partnership Image -->
+                <div class="col-lg-5" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="fs-testi-cert-box">
+                        <!-- Placeholder for Certificate/MoU -->
+                        <img src="assets/images/backgrounds/testi-certificate.jpeg" alt="Partnership Certificate"
+                            class="fs-testi-cert-img">
+                    </div>
+                </div>
+
+                <!-- Right: Auto-Sliding Testimonials -->
+                <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="fs-testi-content-wrap">
+                        <span class="fs-section-subtitle">We Are Happy Customers</span>
+
+                        <!-- Testimonial Slider Viewport -->
+                        <div class="fs-testi-slider-viewport mt-4" id="fs-testi-viewport">
+                            <div class="fs-testi-track" id="fs-testi-track">
+
+                                <!-- Slide 1 -->
+                                <div class="fs-testi-slide active">
+                                    <p class="fs-testi-quote">"We have been sourcing steel from them for over 5 years
+                                        now. Their timely delivery and consistent material quality make them our most
+                                        trusted industrial partner."</p>
+                                    <h4 class="fs-testi-author">Amit Singhal</h4>
+                                    <p class="fs-testi-designation">Procurement Head, MegaCorp</p>
+                                </div>
+
+                                <!-- Slide 2 -->
+                                <div class="fs-testi-slide">
+                                    <p class="fs-testi-quote">"The durability of Falcon Stainless tubes is unmatched. It
+                                        has significantly reduced our maintenance costs and improved overall project
+                                        structural integrity."</p>
+                                    <h4 class="fs-testi-author">Rajesh Sharma</h4>
+                                    <p class="fs-testi-designation">Chief Engineer, BuildTech India</p>
+                                </div>
+
+                                <!-- Slide 3 -->
+                                <div class="fs-testi-slide">
+                                    <p class="fs-testi-quote">"Outstanding customer support paired with flawless
+                                        manufacturing standards. We highly recommend Falcon Steel for any heavy-duty
+                                        industrial requirements."</p>
+                                    <h4 class="fs-testi-author">Priya Desai</h4>
+                                    <p class="fs-testi-designation">Director, Nexus Infrastructure</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Slider Navigation Arrows -->
+                        <div class="fs-testi-controls-wrapper">
+                            <button class="fs-slider-btn" id="fs-testi-prev" aria-label="Previous Review">
+                                <i class="fa-solid fa-angle-left"></i>
+                            </button>
+                            <button class="fs-slider-btn" id="fs-testi-next" aria-label="Next Review">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- =========================================
+         SECTION 9: GALLERY (REFERENCE MASONRY LAYOUT)
+         ========================================= -->
+    <section id="fs-gallery-section">
+        <div class="container">
+
+            <!-- Section Header (Reference Style) -->
+            <div class="fs-gallery-header text-center" data-aos="fade-up" data-aos-duration="1000">
+                <span class="fs-ref-subtitle">INFRASTRUCTURE</span>
+                <h2 class="fs-ref-title">OUR <span>FACILITY</span> & GALLERY</h2>
+            </div>
+
+            <!-- Asymmetric Grid based strictly on reference image -->
+            <div class="fs-gallery-grid-new">
+
+                <!-- Item 1: Large Image on the left (spans 2 rows, 2 cols) -->
+                <div class="fs-gallery-item-new fs-grid-large" data-aos="zoom-in" data-aos-delay="100">
+                    <!-- Train Placeholder (Heavy Machinery/Transport) -->
+                    <img src="https://www.raviseamless.com/assets/images/applications/railway-coaches.jpg"
+                        alt="Heavy Transport Steel" class="fs-gallery-img">
+                    <div class="fs-gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>View Fullscreen</span>
+                    </div>
+                </div>
+
+                <!-- Item 2: Wide Image top right (spans 1 row, 2 cols) -->
+                <div class="fs-gallery-item-new fs-grid-wide" data-aos="zoom-in" data-aos-delay="200">
+                    <!-- Stainless Furniture/Premium Finish Placeholder -->
+                    <img src="https://www.raviseamless.com/assets/images/applications/steel-furniture.jpg"
+                        alt="Premium Finish Furniture" class="fs-gallery-img">
+                    <div class="fs-gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>View Fullscreen</span>
+                    </div>
+                </div>
+
+                <!-- Item 3: Small Image middle right 1 (spans 1 row, 1 col) -->
+                <div class="fs-gallery-item-new" data-aos="zoom-in" data-aos-delay="300">
+                    <!-- Factory Arm/Robotics Placeholder -->
+                    <img src="https://www.raviseamless.com/assets/images/applications/automobile-machinery.jpg"
+                        alt="Factory Robotics" class="fs-gallery-img">
+                    <div class="fs-gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>View Fullscreen</span>
+                    </div>
+                </div>
+
+                <!-- Item 4: Small Image middle right 2 (spans 1 row, 1 col) -->
+                <div class="fs-gallery-item-new" data-aos="zoom-in" data-aos-delay="400">
+                    <!-- Factory Interior/Machinery Placeholder -->
+                    <img src="https://www.raviseamless.com/assets/images/applications/machinery-equipment.jpg"
+                        alt="Factory Interior" class="fs-gallery-img">
+                    <div class="fs-gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>View Fullscreen</span>
+                    </div>
+                </div>
+
+                <!-- Item 5: Small Image bottom left (spans 1 row, 1 col) -->
+                <div class="fs-gallery-item-new" data-aos="zoom-in" data-aos-delay="500">
+                    <!-- Stairs/Industrial Structure Placeholder -->
+                    <img src="https://www.raviseamless.com/assets/images/applications/railings.jpg"
+                        alt="Industrial Stairs" class="fs-gallery-img">
+                    <div class="fs-gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>View Fullscreen</span>
+                    </div>
+                </div>
+
+                <!-- Item 6: Wide Image bottom middle (spans 1 row, 2 cols) -->
+                <div class="fs-gallery-item-new fs-grid-wide" data-aos="zoom-in" data-aos-delay="600">
+                    <!-- Architecture / Structural pipes Placeholder -->
+                    <img src="https://www.raviseamless.com/assets/images/applications/architectural-structures.jpg"
+                        alt="Structural Architecture" class="fs-gallery-img">
+                    <div class="fs-gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>View Fullscreen</span>
+                    </div>
+                </div>
+
+                <!-- Item 7: Small Image bottom right (spans 1 row, 1 col) -->
+                <div class="fs-gallery-item-new" data-aos="zoom-in" data-aos-delay="700">
+                    <!-- Pipes/Tanks Placeholder -->
+                    <img src="https://www.raviseamless.com/assets/images/applications/pharmaceuticals.jpeg"
+                        alt="Industrial Pipes and Tanks" class="fs-gallery-img">
+                    <div class="fs-gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>View Fullscreen</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- =========================================
+         SECTION 10: SUPPORT & RESOURCES (NEW)
+         ========================================= -->
+    <section id="fs-support-section">
+        <div class="fs-support-overlay"></div>
+        <div class="container position-relative z-index-2">
+
+            <!-- Section Header -->
+            <div class="fs-support-header" data-aos="fade-up" data-aos-duration="1000">
+                <span class="fs-section-subtitle">Support</span>
+                <h2 class="fs-section-title">Find what you need according to<br>your requirements</h2>
+                <p>We provide all the necessary technical details and up-to-date material to answer all your questions.
+                    Regardless of your project phase, we support you to find exactly what you need.</p>
+            </div>
+
+            <!-- Glassmorphism Cards Grid -->
+            <div class="fs-support-grid">
+
+                <!-- Card 1 -->
+                <div class="fs-support-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="fs-support-tag">Tools</span>
+                    <h3 class="fs-support-title">Products Selection Guide</h3>
+                    <p class="fs-support-desc">Discover the perfect SS Tubes and Pipes tailored for your specific
+                        industrial applications and structural needs.</p>
+                    <a href="#" class="fs-support-link">
+                        Enter the Guide <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="fs-support-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="fs-support-tag">Knowledge Base</span>
+                    <h3 class="fs-support-title">Informational Material & Specs</h3>
+                    <p class="fs-support-desc">Read our rich, informative material. Access detailed chemical
+                        compositions, mechanical properties, and tolerance charts.</p>
+                    <a href="#" class="fs-support-link">
+                        Open the Knowledge Base <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="fs-support-card" data-aos="fade-up" data-aos-delay="300">
+                    <span class="fs-support-tag">Global Presence</span>
+                    <h3 class="fs-support-title">Across the globe</h3>
+                    <p class="fs-support-desc">Operating in major industrial hubs, Falcon Steel ensures timely delivery
+                        of premium steel anywhere you need.</p>
+                    <a href="#" class="fs-support-link">
+                        Read more <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="fs-support-card" data-aos="fade-up" data-aos-delay="400">
+                    <span class="fs-support-tag">Factory Visit</span>
+                    <h3 class="fs-support-title">A Visit to our Facility</h3>
+                    <p class="fs-support-desc">Visit our state-of-the-art manufacturing plant and explore our systems
+                        with the help of specialized consultants.</p>
+                    <a href="#" class="fs-support-link">
+                        Book an Appointment <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+    <!-- =========================================
+         SECTION 11: MEGA FOOTER
+         ========================================= -->
+    <footer id="fs-footer">
+        <div class="fs-footer-top-border"></div> <!-- Glowing top border -->
+
+        <div class="container pt-5 pb-4">
+            <div class="row gy-5">
+
+                <!-- Col 1: Brand Info -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <a href="#" class="fs-footer-logo">
+                        <img src="assets/images/logo/falcon-logo.PNG" alt="Falcon Steel Logo">
+                    </a>
+                    <p class="fs-footer-about">India’s premier manufacturer of high-grade Stainless Steel Round, Square,
+                        Rectangle & Oval Tubes. Forging strength, engineering precision, and delivering excellence since
+                        our inception.</p>
+                    <div class="fs-footer-socials">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="col-lg-2 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="fs-footer-heading">Quick Links</h4>
+                    <ul class="fs-footer-links">
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#products"><i class="fa-solid fa-chevron-right"></i> Products</a></li>
+                        <li><a href="#quality"><i class="fa-solid fa-chevron-right"></i> Quality Assurance</a></li>
+                        <li><a href="#contact"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Products Links -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="fs-footer-heading">Our Products</h4>
+                    <ul class="fs-footer-links">
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> SS Round Tubes</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> SS Square Tubes</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> SS Rectangle Tubes</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> SS Oval Tubes</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Custom SS Profiles</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact Info -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <h4 class="fs-footer-heading">Contact Info</h4>
+                    <ul class="fs-footer-contact">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>123 Industrial Area, Phase 1,<br>New Delhi, India 110020</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+91 98961 88840<br>+91 97291 88840</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>@falconsteel000@gmail.com<br>sales@falconsteel.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="fs-footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p>&copy; 2026 Falcon Stainless Steel. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =========================================
+         IMAGE LIGHTBOX (FULLSCREEN VIEW)
+         ========================================= -->
+    <div class="fs-lightbox" id="fs-lightbox">
+        <span class="fs-lightbox-close" id="fs-lightbox-close"><i class="fa-solid fa-xmark"></i></span>
+        <img class="fs-lightbox-img" id="fs-lightbox-img" src="" alt="Fullscreen Image">
+    </div>
+
+    <!-- Bootstrap & Plugins JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.css"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize Animate On Scroll
+        AOS.init({
+            once: true, // Animation happens only once while scrolling down
+            offset: 100 // Offset (in px) from the original trigger point
+        });
+
+        // Navbar Scroll Effect Script
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.getElementById("fs-main-header");
+
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 50) {
+                    header.classList.add("fs-scrolled");
+                } else {
+                    header.classList.remove("fs-scrolled");
+                }
+            });
+
+            // ==========================================
+            // Product Slider Logic (Section 4)
+            // ==========================================
+            const prodTrack = document.getElementById('fs-product-slider');
+            const btnProdPrev = document.getElementById('fs-slider-prev');
+            const btnProdNext = document.getElementById('fs-slider-next');
+
+            if (prodTrack && btnProdPrev && btnProdNext) {
+                btnProdNext.addEventListener('click', () => {
+                    const cardWidth = prodTrack.querySelector('.fs-product-card').offsetWidth;
+                    prodTrack.scrollBy({ left: cardWidth + 30, behavior: 'smooth' });
+                });
+
+                btnProdPrev.addEventListener('click', () => {
+                    const cardWidth = prodTrack.querySelector('.fs-product-card').offsetWidth;
+                    prodTrack.scrollBy({ left: -(cardWidth + 30), behavior: 'smooth' });
+                });
+            }
+
+            // ==========================================
+            // Testimonial Auto-Slider Logic (Section 7)
+            // ==========================================
+            const testiTrack = document.getElementById('fs-testi-track');
+            const testiSlides = document.querySelectorAll('.fs-testi-slide');
+            const btnTestiPrev = document.getElementById('fs-testi-prev');
+            const btnTestiNext = document.getElementById('fs-testi-next');
+            let currentTestiSlide = 0;
+            const totalTestiSlides = testiSlides.length;
+            let testiAutoPlayInterval;
+
+            if (testiTrack && testiSlides.length > 0) {
+
+                function updateTestiSlider() {
+                    // Calculate translation percentage (100% per slide)
+                    const translateValue = -(currentTestiSlide * 100);
+                    testiTrack.style.transform = `translateX(${translateValue}%)`;
+
+                    // Toggle active classes for smooth fade effect
+                    testiSlides.forEach((slide, index) => {
+                        if (index === currentTestiSlide) {
+                            slide.classList.add('active');
+                        } else {
+                            slide.classList.remove('active');
+                        }
+                    });
+                }
+
+                function nextTestiSlide() {
+                    currentTestiSlide = (currentTestiSlide + 1) % totalTestiSlides;
+                    updateTestiSlider();
+                }
+
+                function prevTestiSlide() {
+                    currentTestiSlide = (currentTestiSlide - 1 + totalTestiSlides) % totalTestiSlides;
+                    updateTestiSlider();
+                }
+
+                // Button Clicks
+                if (btnTestiNext) {
+                    btnTestiNext.addEventListener('click', () => {
+                        nextTestiSlide();
+                        resetTestiAutoPlay(); // Pause and restart timer on manual click
+                    });
+                }
+
+                if (btnTestiPrev) {
+                    btnTestiPrev.addEventListener('click', () => {
+                        prevTestiSlide();
+                        resetTestiAutoPlay();
+                    });
+                }
+
+                // Auto Play Setup (Slides every 5 seconds)
+                function startTestiAutoPlay() {
+                    testiAutoPlayInterval = setInterval(nextTestiSlide, 5000);
+                }
+
+                function resetTestiAutoPlay() {
+                    clearInterval(testiAutoPlayInterval);
+                    startTestiAutoPlay();
+                }
+
+                // Start Autoplay on load
+                startTestiAutoPlay();
+            }
+
+            // ==========================================
+            // Gallery Fullscreen Lightbox Logic
+            // ==========================================
+            // Updated class name specifically for the new gallery grid layout
+            const galleryItems = document.querySelectorAll('.fs-gallery-item-new');
+            const lightbox = document.getElementById('fs-lightbox');
+            const lightboxImg = document.getElementById('fs-lightbox-img');
+            const lightboxClose = document.getElementById('fs-lightbox-close');
+
+            if (lightbox && lightboxImg && lightboxClose) {
+                // Open lightbox on image click
+                galleryItems.forEach(item => {
+                    item.addEventListener('click', function () {
+                        const imgSrc = this.querySelector('.fs-gallery-img').getAttribute('src');
+                        lightboxImg.setAttribute('src', imgSrc);
+                        lightbox.classList.add('active');
+                        document.body.style.overflow = 'hidden'; // Stop background scrolling
+                    });
+                });
+
+                // Close on click X button
+                lightboxClose.addEventListener('click', () => {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = 'auto'; // Restore background scrolling
+                });
+
+                // Close on click outside the image
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target !== lightboxImg) {
+                        lightbox.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
