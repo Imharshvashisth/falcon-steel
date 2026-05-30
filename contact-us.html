@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falcon Stainless Steel | Strength in Every Length</title>
+
+    <!-- Google Fonts: Montserrat (Headings) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:ital,wght@0,400;0,700;0,800;1,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/index.css">
+
+
+    <style>
+        /* =========================================
+           ROOT VARIABLES & BASE STYLES
+           ========================================= */
+        :root {
+            --fs-bg-dark: #050505;
+            --fs-bg-glass: rgba(5, 5, 5, 0.85);
+            --fs-falcon-blue: #042D4B;
+            --fs-falcon-blue-light: #0A4A7A;
+            --fs-steel-silver: #C0C5CE;
+            --fs-text-white: #FFFFFF;
+            --fs-text-muted: #94A3B8;
+            --fs-accent-glow: #00D4FF;
+
+            --fs-font-heading: 'Montserrat', sans-serif;
+            --fs-font-body: 'Inter', sans-serif;
+
+            --fs-transition-fast: 0.3s ease;
+            --fs-transition-smooth: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--fs-bg-dark);
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-body);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--fs-font-heading);
+            font-weight: 700;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--fs-bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--fs-falcon-blue-light);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--fs-accent-glow);
+        }
+
+        /* General Section Subtitles & Titles */
+        .fs-page-subtitle {
+            color: var(--fs-accent-glow);
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .fs-page-subtitle.has-line::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            width: 30px;
+            height: 2px;
+            background: var(--fs-accent-glow);
+            transform: translateY(-50%);
+            box-shadow: 0 0 8px var(--fs-accent-glow);
+        }
+
+        .fs-page-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--fs-text-white);
+            line-height: 1.2;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .fs-text-glow {
+            color: var(--fs-accent-glow);
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+        }
+
+        /* =========================================
+           1. HERO BANNER
+           ========================================= */
+        #fs-contact-hero {
+            position: relative;
+            width: 100vw;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            /* Parallax effect */
+            z-index: 1;
+        }
+
+        .fs-contact-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(5, 5, 5, 0.653) 0%, rgba(5, 5, 5, 0.804) 100%);
+            z-index: -1;
+        }
+
+        .fs-contact-hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .fs-contact-hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: var(--fs-text-white);
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .fs-contact-hero-title {
+                font-size: 2.8rem;
+            }
+        }
+
+        /* =========================================
+           2. CONTACT INFO BOXES (3 CARDS)
+           ========================================= */
+        #fs-info-section {
+            padding: 80px 0 40px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .fs-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: -120px;
+            /* Overlaps with hero section slightly for premium look */
+        }
+
+        .fs-info-card {
+            background: rgba(15, 20, 25, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--fs-transition-smooth);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .fs-info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 15px;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--fs-accent-glow), transparent, var(--fs-falcon-blue));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: var(--fs-transition-smooth);
+            pointer-events: none;
+        }
+
+        .fs-info-card:hover {
+            transform: translateY(-10px);
+            background: rgba(20, 25, 30, 0.98);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 212, 255, 0.1);
+        }
+
+        .fs-info-card:hover::before {
+            opacity: 1;
+        }
+
+        .fs-info-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+            font-size: 1.8rem;
+            color: var(--fs-steel-silver);
+            transition: var(--fs-transition-smooth);
+        }
+
+        .fs-info-card:hover .fs-info-icon {
+            background: var(--fs-falcon-blue);
+            color: var(--fs-text-white);
+            border-color: var(--fs-accent-glow);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+            transform: scale(1.1);
+        }
+
+        .fs-info-title {
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .fs-info-desc {
+            color: var(--fs-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .fs-info-desc a {
+            color: var(--fs-text-muted);
+            text-decoration: none;
+            transition: var(--fs-transition-fast);
+        }
+
+        .fs-info-desc a:hover {
+            color: var(--fs-accent-glow);
+        }
+
+        @media (max-width: 991px) {
+            .fs-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fs-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* =========================================
+           3. FORM & MAP SECTION
+           ========================================= */
+        #fs-contact-main {
+            padding: 80px 0 120px 0;
+            background-image:
+                linear-gradient(rgba(0, 212, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            position: relative;
+        }
+
+        /* The Dark Premium Form */
+        .fs-form-wrapper {
+            background: rgba(10, 15, 20, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .fs-form-header {
+            margin-bottom: 30px;
+        }
+
+        .fs-form-header h3 {
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-heading);
+            font-size: 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .fs-form-header p {
+            color: var(--fs-text-muted);
+            font-size: 0.95rem;
+        }
+
+        .fs-form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .fs-form-control {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--fs-text-white);
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: var(--fs-font-body);
+            transition: var(--fs-transition-smooth);
+        }
+
+        .fs-form-control:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--fs-accent-glow);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+        }
+
+        .fs-form-control::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        textarea.fs-form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .fs-btn-submit {
+            background: linear-gradient(45deg, var(--fs-falcon-blue), var(--fs-accent-glow));
+            color: var(--fs-text-white);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-family: var(--fs-font-heading);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            transition: var(--fs-transition-smooth);
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .fs-btn-submit:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.5);
+            background: linear-gradient(45deg, var(--fs-accent-glow), var(--fs-falcon-blue));
+        }
+
+        /* The Full Color Map */
+        .fs-map-wrapper {
+            height: 100%;
+            min-height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        /* Ensuring NO black and white filter on the map */
+        .fs-map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: none !important;
+            /* Forces full color */
+        }
+
+        /* Decorative glowing border for map */
+        .fs-map-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            pointer-events: none;
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+
+        @media (max-width: 991px) {
+            .fs-map-wrapper {
+                margin-top: 50px;
+                min-height: 400px;
+            }
+
+            .fs-form-wrapper {
+                padding: 40px 20px;
+            }
+        }
+
+        /* =========================================
+           4. FINAL CTA (PARALLAX SECTION)
+           ========================================= */
+        #fs-bottom-cta {
+            position: relative;
+            padding: 100px 0;
+            background-image: url('assets/images/backgrounds/testi-bg.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .fs-cta-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.694);
+            backdrop-filter: blur(4px);
+            z-index: -1;
+        }
+
+        .fs-cta-content h2 {
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-heading);
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .fs-cta-content p {
+            color: var(--fs-steel-silver);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            line-height: 1.7;
+        }
+
+        .fs-btn-massive {
+            background: var(--fs-text-white);
+            color: var(--fs-falcon-blue);
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-family: var(--fs-font-heading);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--fs-transition-smooth);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .fs-btn-massive:hover {
+            background: var(--fs-accent-glow);
+            color: var(--fs-bg-dark);
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .fs-cta-content h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <!-- Agent Sticker -->
+    <div class="falcon-agent-sticker-box">
+        <img src="assets/images/logo/agent-1.png" alt="Falcon Steel Agent">
+    </div>
+
+    <!-- FLOATING SOCIALS -->
+    <div class="fs-floating-socials">
+        <a href="tel:+919896188840" class="fs-social-btn fs-social-phone" title="Call Us">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+
+        <a href="mailto:falcoonsteel0001@gmail.com" class="fs-social-btn fs-social-email" title="Email Us">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <a href="https://wa.me/919896188840" class="fs-social-btn fs-social-whatsapp" title="WhatsApp Us"
+            target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- =========================================
+         SECTION 1: NAVBAR (HEADER)
+         ========================================= -->
+    <nav id="fs-main-header" class="navbar navbar-expand-lg fixed-top">
+        <div class="container" data-aos="fade-down" data-aos-duration="1000">
+            <!-- Logo with Clean Rounded White Half-Pill Shape -->
+            <a class="navbar-brand fs-logo-wrapper" href="index.html">
+                <img src="assets/images/logo/falcon-logo.PNG" alt="Falcon Steel Logo" class="fs-logo-img">
+            </a>
+
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#fsNavbarContent"
+                aria-controls="fsNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav Links -->
+            <div class="collapse navbar-collapse" id="fsNavbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item fs-nav-item">
+                        <a class="nav-link fs-nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item fs-nav-item">
+                        <a class="nav-link fs-nav-link" href="about-us.html">About</a>
+                    </li>
+
+                    <!-- Dropdown for Products -->
+                    <li class="nav-item dropdown fs-nav-item fs-dropdown-wrapper">
+                        <a class="nav-link dropdown-toggle fs-nav-link" href="ss-roud-tubes-and-pipes.html"
+                            id="fsNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu fs-dropdown-menu" aria-labelledby="fsNavbarDropdown">
+                            <li><a class="dropdown-item fs-dropdown-item" href="ss-roud-tubes-and-pipes.html">SS Round
+                                    Tubes</a></li>
+                            <li><a class="dropdown-item fs-dropdown-item" href="ss-roud-tubes-and-pipes.html">SS Square
+                                    Tubes</a></li>
+                            <li><a class="dropdown-item fs-dropdown-item" href="ss-roud-tubes-and-pipes.html">SS
+                                    Rectangle Tubes</a></li>
+                            <li><a class="dropdown-item fs-dropdown-item" href="ss-roud-tubes-and-pipes.html">SS Oval
+                                    Tubes</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item fs-nav-item">
+                        <a class="nav-link fs-nav-link" href="quality.html">Quality</a>
+                    </li>
+                    <li class="nav-item fs-nav-item">
+                        <a class="nav-link fs-nav-link" href="plants-and-machinery.html">Machinery and plants</a>
+                    </li>
+                    <li class="nav-item fs-nav-item">
+                        <a class="nav-link fs-nav-link" href="contact-us.html">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Action Button -->
+                <div class="d-flex">
+                    <a href="contact-us.html" class="fs-btn-quote">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+    <!-- =========================================
+         1. HERO BANNER
+         ========================================= -->
+    <section id="fs-contact-hero">
+        <div class="fs-contact-hero-overlay"></div>
+        <div class="container fs-contact-hero-content" data-aos="zoom-in" data-aos-duration="1200">
+            <span class="fs-page-subtitle">Connect With Us</span>
+            <h1 class="fs-contact-hero-title">Let's Talk <span class="fs-text-glow">Business</span></h1>
+            <p class="fs-text-muted mx-auto" style="max-width: 650px; font-size: 1.15rem;">Have a critical project
+                requirement? Reach out to our technical experts and sales team for precise manufacturing solutions.</p>
+        </div>
+    </section>
+
+    <!-- =========================================
+         2. CONTACT INFO BOXES
+         ========================================= -->
+    <section id="fs-info-section">
+        <div class="container">
+            <div class="fs-info-grid">
+
+                <!-- Box 1: Address -->
+                <div class="fs-info-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="fs-info-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="fs-info-title">Corporate HQ</h3>
+                    <p class="fs-info-desc">
+                        123 Industrial Area, Phase 1,<br>
+                        New Delhi, India 110020
+                    </p>
+                </div>
+
+                <!-- Box 2: Phone -->
+                <div class="fs-info-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="fs-info-icon">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+                    <h3 class="fs-info-title">Call Us</h3>
+                    <p class="fs-info-desc">
+                        <a href="tel:+919876543210">+91 98765 43210</a><br>
+                        <a href="tel:+919876501234">+91 98765 01234</a>
+                    </p>
+                </div>
+
+                <!-- Box 3: Email -->
+                <div class="fs-info-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="fs-info-icon">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                    </div>
+                    <h3 class="fs-info-title">Email Us</h3>
+                    <p class="fs-info-desc">
+                        <a href="mailto:sales@falconsteel.com">sales@falconsteel.com</a><br>
+                        <a href="mailto:info@falconsteel.com">info@falconsteel.com</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         3. FORM & FULL COLOR MAP
+         ========================================= -->
+    <section id="fs-contact-main">
+        <div class="container">
+            <div class="row">
+
+                <!-- Left: Premium Form -->
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="fs-form-wrapper">
+                        <div class="fs-form-header">
+                            <h3>Send an Inquiry</h3>
+                            <p>Fill out the form below and our team will get back to you within 24 hours.</p>
+                        </div>
+
+                        <form action="#" method="POST">
+                            <div class="row">
+                                <div class="col-md-6 fs-form-group">
+                                    <input type="text" class="fs-form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 fs-form-group">
+                                    <input type="email" class="fs-form-control" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 fs-form-group">
+                                    <input type="tel" class="fs-form-control" placeholder="Phone Number">
+                                </div>
+                                <div class="col-md-6 fs-form-group">
+                                    <input type="text" class="fs-form-control" placeholder="Company Name">
+                                </div>
+                            </div>
+                            <div class="fs-form-group">
+                                <input type="text" class="fs-form-control" placeholder="Subject / Steel Grade Required"
+                                    required>
+                            </div>
+                            <div class="fs-form-group">
+                                <textarea class="fs-form-control"
+                                    placeholder="Describe your project requirements or dimensions..."
+                                    required></textarea>
+                            </div>
+                            <button type="submit" class="fs-btn-submit">
+                                Send Message <i class="fa-solid fa-paper-plane ms-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right: Full Color Google Map -->
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="fs-map-wrapper">
+                        <!-- Standard Google Maps Iframe (Full Color) -->
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d886365.9801915799!2d75.14135187812496!3d29.7959368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3911e0b78bd81923%3A0xb0d7dfd88e9cae2b!2sFALCON%20STEELS!5e0!3m2!1sen!2sin!4v1780145209689!5m2!1sen!2sin"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         4. FINAL CTA (PARALLAX)
+         ========================================= -->
+    <section id="fs-bottom-cta">
+        <div class="fs-cta-overlay"></div>
+        <div class="container position-relative z-index-2 fs-cta-content" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Ready To Start?</h2>
+            <p>Our infrastructure is ready to manufacture exactly what you need. Let's build the future together with
+                uncompromised strength.</p>
+            <a href="#" class="fs-btn-massive">
+                Download Brochure <i class="fa-solid fa-download ms-2"></i>
+            </a>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- =========================================
+         SECTION 11: MEGA FOOTER
+         ========================================= -->
+    <footer id="fs-footer">
+        <div class="fs-footer-top-border"></div> <!-- Glowing top border -->
+
+        <div class="container pt-5 pb-4">
+            <div class="row gy-5">
+
+                <!-- Col 1: Brand Info -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <a href="#" class="fs-footer-logo">
+                        <img src="assets/images/logo/falcon-logo.PNG" alt="Falcon Steel Logo">
+                    </a>
+                    <p class="fs-footer-about">India’s premier manufacturer of high-grade Stainless Steel Round, Square,
+                        Rectangle & Oval Tubes. Forging strength, engineering precision, and delivering excellence since
+                        our inception.</p>
+                    <div class="fs-footer-socials">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="col-lg-2 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="fs-footer-heading">Quick Links</h4>
+                    <ul class="fs-footer-links">
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about-us.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="ss-roud-tubes-and-pipes.html"><i class="fa-solid fa-chevron-right"></i>
+                                Products</a></li>
+                        <li><a href="quality.html"><i class="fa-solid fa-chevron-right"></i> Quality Assurance</a></li>
+                        <li><a href="contact-us.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Products Links -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="fs-footer-heading">Our Products</h4>
+                    <ul class="fs-footer-links">
+                        <li><a href="ss-roud-tubes-and-pipes.html"><i class="fa-solid fa-chevron-right"></i> SS Round
+                                Tubes</a></li>
+                        <li><a href="ss-roud-tubes-and-pipes.html"><i class="fa-solid fa-chevron-right"></i> SS Square
+                                Tubes</a></li>
+                        <li><a href="ss-roud-tubes-and-pipes.html"><i class="fa-solid fa-chevron-right"></i> SS
+                                Rectangle Tubes</a></li>
+                        <li><a href="ss-roud-tubes-and-pipes.html"><i class="fa-solid fa-chevron-right"></i> SS Oval
+                                Tubes</a></li>
+                        <li><a href="ss-roud-tubes-and-pipes.html"><i class="fa-solid fa-chevron-right"></i> Custom SS
+                                Profiles</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact Info -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <h4 class="fs-footer-heading">Contact Info</h4>
+                    <ul class="fs-footer-contact">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>123 Industrial Area, Phase 1,<br>New Delhi, India 110020</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+91 98961 88840<br>+91 97291 88840</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>@falconsteel000@gmail.com<br>sales@falconsteel.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="fs-footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p>&copy; 2026 Falcon Stainless Steel. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap & Plugins JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.css"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize Animate On Scroll
+        AOS.init({
+            once: true, // Animation happens only once while scrolling down
+            offset: 100 // Offset (in px) from the original trigger point
+        });
+
+        // Navbar Scroll Effect Script
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.getElementById("fs-main-header");
+
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 50) {
+                    header.classList.add("fs-scrolled");
+                } else {
+                    header.classList.remove("fs-scrolled");
+                }
+            });
+
+
+
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falcon Stainless Steel | Strength in Every Length</title>
+
+    <!-- Google Fonts: Montserrat (Headings) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:ital,wght@0,400;0,700;0,800;1,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/index.css">
+
+    <style>
+        /* =========================================
+           ROOT VARIABLES & BASE STYLES
+           ========================================= */
+        :root {
+            --fs-bg-dark: #050505;
+            --fs-bg-glass: rgba(5, 5, 5, 0.85);
+            --fs-falcon-blue: #042D4B;
+            --fs-falcon-blue-light: #0A4A7A;
+            --fs-steel-silver: #C0C5CE;
+            --fs-text-white: #FFFFFF;
+            --fs-text-muted: #94A3B8;
+            --fs-accent-glow: #00D4FF;
+
+            --fs-font-heading: 'Montserrat', sans-serif;
+            --fs-font-body: 'Inter', sans-serif;
+
+            --fs-transition-fast: 0.3s ease;
+            --fs-transition-smooth: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--fs-bg-dark);
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-body);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--fs-font-heading);
+            font-weight: 700;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--fs-bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--fs-falcon-blue-light);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--fs-accent-glow);
+        }
+
+        /* General Section Subtitles & Titles */
+        .fs-page-subtitle {
+            color: var(--fs-accent-glow);
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .fs-page-subtitle.has-line::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            width: 30px;
+            height: 2px;
+            background: var(--fs-accent-glow);
+            transform: translateY(-50%);
+            box-shadow: 0 0 8px var(--fs-accent-glow);
+        }
+
+        .fs-page-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--fs-text-white);
+            line-height: 1.2;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        /* Solid Highlight Text */
+        .fs-text-glow {
+            color: var(--fs-accent-glow);
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+        }
+
+        /* Buttons */
+        .fs-btn-primary {
+            background: linear-gradient(45deg, var(--fs-falcon-blue), var(--fs-accent-glow));
+            color: var(--fs-text-white);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-family: var(--fs-font-heading);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            transition: var(--fs-transition-smooth);
+            border: none;
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .fs-btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.5);
+            color: var(--fs-text-white);
+        }
+
+        /* =========================================
+           1. HERO BANNER
+           ========================================= */
+        #fs-pm-hero {
+            position: relative;
+            width: 100vw;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://www.apsteel.in/assets/images/banner/abt-banner.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            /* Parallax effect */
+            z-index: 1;
+        }
+
+        .fs-pm-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(5, 5, 5, 0.6) 0%, rgba(5, 5, 5, 0.705) 100%);
+            z-index: -1;
+        }
+
+        .fs-pm-hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .fs-pm-hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: var(--fs-text-white);
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .fs-pm-hero-title {
+                font-size: 2.8rem;
+            }
+        }
+
+        /* =========================================
+           2. PLANT OVERVIEW (INFRASTRUCTURE)
+           ========================================= */
+        #fs-pm-overview {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            background-image:
+                linear-gradient(rgba(0, 212, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .fs-overview-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .fs-overview-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--fs-transition-smooth);
+        }
+
+        .fs-overview-image-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        .fs-overview-stats-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(0, 212, 255, 0.05);
+            z-index: 3;
+            min-width: 350px;
+        }
+
+        .fs-stat-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 20px;
+        }
+
+        .fs-stat-row:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .fs-stat-row i {
+            font-size: 2.2rem;
+            color: var(--fs-accent-glow);
+        }
+
+        .fs-stat-info h4 {
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-heading);
+            font-size: 1.5rem;
+            margin: 0 0 5px 0;
+            font-weight: 800;
+        }
+
+        .fs-stat-info p {
+            color: var(--fs-steel-silver);
+            margin: 0;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .fs-overview-content {
+            padding-left: 60px;
+        }
+
+        .fs-overview-desc {
+            color: var(--fs-text-muted);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 1199px) {
+            .fs-overview-stats-card {
+                right: 20px;
+                bottom: 20px;
+                min-width: auto;
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .fs-overview-content {
+                padding-left: 0;
+                margin-top: 60px;
+            }
+
+            .fs-overview-stats-card {
+                position: relative;
+                right: auto;
+                bottom: auto;
+                margin-top: -30px;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+        }
+
+        /* =========================================
+           3. MANUFACTURING ARSENAL (ALTERNATING LAYOUT)
+           ========================================= */
+        #fs-machinery-arsenal {
+            padding: 120px 0;
+            background-color: #030508;
+            position: relative;
+        }
+
+        .fs-ma-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .fs-ma-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 120px;
+            position: relative;
+        }
+
+        .fs-ma-row:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Even rows reverse direction */
+        .fs-ma-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* Image Column */
+        .fs-ma-img-col {
+            width: 55%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .fs-ma-img-col img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+            border-left: 6px solid var(--fs-accent-glow);
+            filter: brightness(0.85);
+            transition: var(--fs-transition-smooth);
+        }
+
+        .fs-ma-row:nth-child(even) .fs-ma-img-col img {
+            border-left: none;
+            border-right: 6px solid var(--fs-accent-glow);
+        }
+
+        .fs-ma-row:hover .fs-ma-img-col img {
+            filter: brightness(1.1);
+            transform: scale(1.02);
+        }
+
+        /* Content Column */
+        .fs-ma-content-col {
+            width: 50%;
+            background: #0A0F16;
+            /* Deep rich dark blue-ish black */
+            padding: 60px 50px;
+            border-radius: 8px;
+            z-index: 2;
+            margin-left: -5%;
+            /* Overlapping effect */
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+            transition: var(--fs-transition-smooth);
+        }
+
+        .fs-ma-row:nth-child(even) .fs-ma-content-col {
+            margin-left: 0;
+            margin-right: -5%;
+        }
+
+        .fs-ma-row:hover .fs-ma-content-col {
+            box-shadow: 0 25px 60px rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.2);
+        }
+
+        /* Giant Watermark Number */
+        .fs-ma-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--fs-font-heading);
+            font-size: 16rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.02);
+            z-index: 0;
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        /* Content Typography */
+        .fs-ma-subtitle {
+            color: var(--fs-accent-glow);
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+        }
+
+        .fs-ma-title {
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-heading);
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+            line-height: 1.2;
+        }
+
+        .fs-ma-desc {
+            color: var(--fs-text-muted);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .fs-ma-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .fs-ma-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: var(--fs-text-white);
+            font-weight: 600;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .fs-ma-features li i {
+            color: var(--fs-accent-glow);
+            font-size: 1.1rem;
+            margin-top: 2px;
+        }
+
+        @media (max-width: 991px) {
+
+            .fs-ma-row,
+            .fs-ma-row:nth-child(even) {
+                flex-direction: column;
+                margin-bottom: 80px;
+            }
+
+            .fs-ma-img-col {
+                width: 100%;
+            }
+
+            .fs-ma-img-col img {
+                border-right: none !important;
+                border-left: 5px solid var(--fs-accent-glow) !important;
+            }
+
+            .fs-ma-content-col {
+                width: 90%;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                margin-top: -50px;
+                padding: 40px 30px;
+            }
+
+            .fs-ma-watermark {
+                font-size: 10rem;
+            }
+
+            .fs-ma-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* =========================================
+           4. PRODUCTION CAPABILITIES (GLASS CARDS)
+           ========================================= */
+        #fs-capabilities {
+            padding: 100px 0;
+            background-color: var(--fs-bg-dark);
+            position: relative;
+        }
+
+        .fs-cap-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .fs-cap-card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+            border-top: 2px solid var(--fs-accent-glow);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            transition: var(--fs-transition-smooth);
+            position: relative;
+        }
+
+        .fs-cap-card:hover {
+            transform: translateY(-10px);
+            background: linear-gradient(180deg, rgba(0, 212, 255, 0.1) 0%, transparent 100%);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .fs-cap-icon {
+            font-size: 3rem;
+            color: var(--fs-steel-silver);
+            margin-bottom: 20px;
+            transition: var(--fs-transition-fast);
+        }
+
+        .fs-cap-card:hover .fs-cap-icon {
+            color: var(--fs-accent-glow);
+            transform: scale(1.1);
+        }
+
+        .fs-cap-value {
+            font-family: var(--fs-font-heading);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--fs-text-white);
+            margin-bottom: 5px;
+        }
+
+        .fs-cap-title {
+            color: var(--fs-accent-glow);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .fs-cap-desc {
+            color: var(--fs-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 991px) {
+            .fs-cap-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fs-cap-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* =========================================
+           5. FACTORY VISIT CTA (PARALLAX)
+           ========================================= */
+        #fs-visit-cta {
+            position: relative;
+            padding: 120px 0;
+            background-image: url('assets/images/backgrounds/testi-bg.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .fs-visit-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.692);
+            backdrop-filter: blur(3px);
+            z-index: -1;
+        }
+
+        .fs-visit-content h2 {
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-heading);
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .fs-visit-content p {
+            color: var(--fs-steel-silver);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            line-height: 1.7;
+        }
+
+        .fs-btn-massive {
+            background: var(--fs-text-white);
+            color: var(--fs-falcon-blue);
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-family: var(--fs-font-heading);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--fs-transition-smooth);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .fs-btn-massive:hover {
+            background: var(--fs-accent-glow);
+            color: var(--fs-bg-dark);
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .fs-visit-content h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+
+    <!-- Agent Sticker -->
+    <div class="falcon-agent-sticker-box">
+        <img src="assets/images/logo/agent-1.png" alt="Falcon Steel Agent">
+    </div>
+
+    <!-- FLOATING SOCIALS -->
+    <div class="fs-floating-socials">
+        <a href="tel:+919896188840" class="fs-social-btn fs-social-phone" title="Call Us">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+
+        <a href="mailto:falcoonsteel0001@gmail.com" class="fs-social-btn fs-social-email" title="Email Us">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <a href="https://wa.me/919896188840" class="fs-social-btn fs-social-whatsapp" title="WhatsApp Us"
+            target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- =========================================
+         SECTION 1: NAVBAR (HEADER)
+         ========================================= -->
+    <nav id="fs-main-header" class="navbar navbar-expand-lg fixed-top">
+        <div class="container" data-aos="fade-down" data-aos-duration="1000">
+            <!-- Logo with Clean Rounded White Half-Pill Shape -->
+            <a class="navbar-brand fs-logo-wrapper" href="index.html">
+                <img src="assets/images/logo/falcon-logo.PNG" alt="Falcon Steel Logo" class="fs-logo-img">
+            </a>
+
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#fsNavbarContent"
+                aria-controls="fsNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav Links -->
+            <div class="collapse navbar-collapse" id="fsNavbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item fs-nav-item">
+                        <a class="nav-link fs-nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item fs-nav-item">
+                        <a class="nav-link fs-nav-link" href="about-us.html">About</a>
+                    </li>
+
+                    <!-- Dropdown for Products -->
+                    <li class="nav-item dropdown fs-nav-item fs-dropdown-wrapper">
+                        <a class="nav-link dropdown-toggle fs-nav-link" href="ss-roud-tubes-and-pipes.html"
+                            id="fsNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu fs-dropdown-menu" aria-labelledby="fsNavbarDropdown">
+                            <li><a class="dropdown-item fs-dropdown-item" href="ss-roud-tubes-and-pipes.html">SS Round
+                                    Tubes</a></li>
+                            <li><a class="dropdown-item fs-dropdown-item" href="ss-roud-tubes-and-pipes.html">SS Square
+                                    Tubes</a></li>
+                            <li><a class="dropdown-item fs-dropdown-item" href="ss-roud-tubes-and-pipes.html">SS
+                                    Rectangle Tubes</a></li>
+                            <li><a class="dropdown-item fs-dropdown-item" href="ss-roud-tubes-and-pipes.html">SS Oval
+                                    Tubes</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item fs-nav-item">
+                        <a class="nav-link fs-nav-link" href="quality.html">Quality</a>
+                    </li>
+                    <li class="nav-item fs-nav-item">
+                        <a class="nav-link fs-nav-link" href="plants-and-machinery.html">Machinery and plants</a>
+                    </li>
+                    <li class="nav-item fs-nav-item">
+                        <a class="nav-link fs-nav-link" href="contact-us.html">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Action Button -->
+                <div class="d-flex">
+                    <a href="contact-us.html" class="fs-btn-quote">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+    <!-- =========================================
+         1. HERO BANNER
+         ========================================= -->
+    <section id="fs-pm-hero">
+        <div class="fs-pm-hero-overlay"></div>
+        <div class="container fs-pm-hero-content" data-aos="zoom-in" data-aos-duration="1200">
+            <span class="fs-page-subtitle">Infrastructure</span>
+            <h1 class="fs-pm-hero-title"><span class="fs-text-glow">Plants</span> & Machinery</h1>
+            <p class="fs-text-muted mx-auto" style="max-width: 750px; font-size: 1.2rem;">Discover the technological
+                heart of Falcon Steel. Equipped with world-class automated mills, precision engineering tools, and
+                massive production capacities.</p>
+        </div>
+    </section>
+
+    <!-- =========================================
+         2. PLANT OVERVIEW
+         ========================================= -->
+    <section id="fs-pm-overview">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- Left: Premium Image with Floating Stats -->
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="fs-overview-image-wrapper">
+                        <!-- High-res factory wide shot -->
+                        <img src="https://imgs.search.brave.com/yzGHsmnSuA_Lq8yRw31VswsqdnZO2OTYcmypPHY1kLs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y2hlbmdzaGVuZ2lu/ZHVzdHJ5LmNvbS9k/YXRhL3VwbG9hZC91/ZWRpdG9yLzIwMjUw/NjA0LzY4M2ZmZjRj/NWRiMDIuanBn"
+                            alt="Falcon Steel Manufacturing Plant">
+
+                        <!-- Floating Stats Card -->
+                        <div class="fs-overview-stats-card">
+                            <div class="fs-stat-row">
+                                <i class="fa-solid fa-industry"></i>
+                                <div class="fs-stat-info">
+                                    <h4>2,50,000+</h4>
+                                    <p>Sq. Ft. Facility Area</p>
+                                </div>
+                            </div>
+                            <div class="fs-stat-row">
+                                <i class="fa-solid fa-users-gear"></i>
+                                <div class="fs-stat-info">
+                                    <h4>500+</h4>
+                                    <p>Skilled Workforce</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Content -->
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="fs-overview-content">
+                        <span class="fs-page-subtitle has-line">The Engine Room</span>
+                        <h2 class="fs-page-title">State-of-the-Art <br><span class="fs-text-glow">Manufacturing
+                                Hub</span></h2>
+
+                        <p class="fs-overview-desc">
+                            Our primary manufacturing facility is a testament to modern industrial engineering. Designed
+                            for maximum efficiency and minimum environmental impact, the plant houses highly automated
+                            production lines capable of continuous 24/7 operation.
+                        </p>
+                        <p class="fs-overview-desc">
+                            By integrating AI-driven monitoring systems with heavy-duty mechanical extrusion and welding
+                            setups, we ensure that every single tube leaving our premises is dimensionally perfect and
+                            structurally invincible.
+                        </p>
+
+                        <div class="mt-5">
+                            <a href="about-us.html" class="fs-btn-primary">
+                                Explore Machinery <i class="fa-solid fa-arrow-down ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         3. MANUFACTURING ARSENAL (ALTERNATING LAYOUT)
+         ========================================= -->
+    <section id="fs-machinery-arsenal">
+        <div class="container">
+
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="fs-page-subtitle">Manufacturing Arsenal</span>
+                <h2 class="fs-page-title">Heavy-Duty <span class="fs-text-glow">Capabilities</span></h2>
+                <p class="fs-text-muted mx-auto" style="max-width: 650px;">A detailed look at the heavy-duty machinery
+                    that powers Falcon Steel's flawless production cycle.</p>
+            </div>
+
+            <div class="fs-ma-container" id="machinery">
+
+                <!-- Row 1: High-Frequency Tube Mills -->
+                <div class="fs-ma-row" data-aos="fade-up">
+                    <div class="fs-ma-img-col">
+                        <img src="https://imgs.search.brave.com/lNgl2rTA3fVMwa8Oq334MoJjJlJQJ5OxXHnSc1Kz3KU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y2hlbmdzaGVuZ2lu/ZHVzdHJ5LmNvbS9k/YXRhL3dhdGVybWFy/ay8yMDE5MDgwNS81/ZDQ3OWU1ZDNjZjIw/LmpwZw"
+                            alt="High-Frequency Tube Mills">
+                    </div>
+                    <div class="fs-ma-content-col">
+                        <div class="fs-ma-watermark">01</div>
+                        <span class="fs-ma-subtitle">Precision Forming</span>
+                        <h3 class="fs-ma-title">High-Frequency Tube Mills</h3>
+                        <p class="fs-ma-desc">Our automated tube mills utilize high-frequency induction welding to
+                            ensure flawless, continuous seams. Capable of handling massive gauges and diameters with
+                            zero tolerance for error.</p>
+                        <ul class="fs-ma-features">
+                            <li><i class="fa-solid fa-gear"></i> Diameter Capacity: 10mm to 350mm</li>
+                            <li><i class="fa-solid fa-bolt"></i> High-Speed Production Lines</li>
+                            <li><i class="fa-solid fa-microchip"></i> PLC Controlled Precision Automation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Row 2: Continuous Bright Annealing -->
+                <div class="fs-ma-row" data-aos="fade-up">
+                    <div class="fs-ma-img-col">
+                        <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=800&auto=format&fit=crop"
+                            alt="Bright Annealing Furnace">
+                    </div>
+                    <div class="fs-ma-content-col">
+                        <div class="fs-ma-watermark">02</div>
+                        <span class="fs-ma-subtitle">Thermal Dynamics</span>
+                        <h3 class="fs-ma-title">Continuous Bright Annealing</h3>
+                        <p class="fs-ma-desc">To relieve internal stresses generated during the welding process, tubes
+                            are passed through our state-of-the-art bright annealing furnaces in a controlled hydrogen
+                            atmosphere.</p>
+                        <ul class="fs-ma-features">
+                            <li><i class="fa-solid fa-temperature-arrow-up"></i> Temperature Control up to 1150°C</li>
+                            <li><i class="fa-solid fa-shield-halved"></i> Prevents Surface Oxidation</li>
+                            <li><i class="fa-solid fa-compress"></i> Enhances Tensile Ductility</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Row 3: Multi-Head Polishing Lines -->
+                <div class="fs-ma-row" data-aos="fade-up">
+                    <div class="fs-ma-img-col">
+                        <img src="https://imgs.search.brave.com/xJOdQx0hvcvV4zBQFY7nyqAFs7iDECSY2gc_-LpoqOM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aWlt/Zy50aXN0YXRpYy5j/b20vZnAvMS8wMDUv/NzE5L3N0YWlubGVz/cy1zdGVlbC04ay1t/aXJyb3ItcG9saXNo/aW5nLW1hY2hpbmUt/MzE0LmpwZw"
+                            alt="Polishing Lines">
+                    </div>
+                    <div class="fs-ma-content-col">
+                        <div class="fs-ma-watermark">03</div>
+                        <span class="fs-ma-subtitle">Flawless Finish</span>
+                        <h3 class="fs-ma-title">Multi-Head Polishing Lines</h3>
+                        <p class="fs-ma-desc">Aesthetics matter. Our advanced multi-head polishing machines deliver a
+                            mirror-like finish, essential for architectural and pharmaceutical grade stainless steel
+                            applications.</p>
+                        <ul class="fs-ma-features">
+                            <li><i class="fa-solid fa-wand-magic-sparkles"></i> Grit Finish: 120G, 320G, 400G, 600G</li>
+                            <li><i class="fa-solid fa-eye"></i> Mirror & Matte Finishes Available</li>
+                            <li><i class="fa-solid fa-shield-virus"></i> Enhances Anti-Corrosive Properties</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Row 4: Precision Slitting Lines -->
+                <div class="fs-ma-row" data-aos="fade-up">
+                    <div class="fs-ma-img-col">
+                        <img src="https://imgs.search.brave.com/iRD8wjdQigF2ztFeg8aJodwUpOwIf0iQuU863gBylYU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudGhlZmFicmlj/YXRvci5jb20vYS80/LXN0ZXBzLXRvd2Fy/ZC1lZmZlY3RpdmUt/d2VsZC1mdW1lLW1p/dGlnYXRpb24tMTc3/NzQwNjExNy5qcGc_/c2l6ZT0zMDB4"
+                            alt="Slitting Lines">
+                    </div>
+                    <div class="fs-ma-content-col">
+                        <div class="fs-ma-watermark">04</div>
+                        <span class="fs-ma-subtitle">Raw Material Prep</span>
+                        <h3 class="fs-ma-title">Precision Slitting Lines</h3>
+                        <p class="fs-ma-desc">The journey begins here. Our heavy-duty slitting lines cut massive
+                            stainless steel master coils into exact widths required for specific tube dimensions with
+                            zero burr tolerance.</p>
+                        <ul class="fs-ma-features">
+                            <li><i class="fa-solid fa-scissors"></i> High Precision Rotary Knives</li>
+                            <li><i class="fa-solid fa-weight-hanging"></i> Handles Master Coils up to 25 Tons</li>
+                            <li><i class="fa-solid fa-ruler-combined"></i> Exact Width Tolerance (± 0.05mm)</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         4. PRODUCTION CAPABILITIES
+         ========================================= -->
+    <section id="fs-capabilities">
+        <div class="container">
+
+            <div class="text-center" data-aos="fade-up">
+                <span class="fs-page-subtitle mx-auto">Scale & Output</span>
+                <h2 class="fs-page-title">Production <span class="fs-text-glow">Capabilities</span></h2>
+            </div>
+
+            <div class="fs-cap-grid">
+
+                <!-- Cap 1 -->
+                <div class="fs-cap-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fa-solid fa-boxes-stacked fs-cap-icon"></i>
+                    <div class="fs-cap-value">1,500 MT</div>
+                    <h4 class="fs-cap-title">Monthly Capacity</h4>
+                    <p class="fs-cap-desc">Our robust infrastructure allows us to manufacture and process over 1,500
+                        Metric Tons of premium stainless steel tubes every month.</p>
+                </div>
+
+                <!-- Cap 2 -->
+                <div class="fs-cap-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fa-solid fa-compress fs-cap-icon"></i>
+                    <div class="fs-cap-value">9.5 - 114.3mm</div>
+                    <h4 class="fs-cap-title">Outer Diameter Range</h4>
+                    <p class="fs-cap-desc">Versatile production lines capable of manufacturing tubes across a wide
+                        spectrum of sizes for diverse industrial applications.</p>
+                </div>
+
+                <!-- Cap 3 -->
+                <div class="fs-cap-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fa-solid fa-ruler-horizontal fs-cap-icon"></i>
+                    <div class="fs-cap-value">0.8 - 3.0mm</div>
+                    <h4 class="fs-cap-title">Thickness Range</h4>
+                    <p class="fs-cap-desc">Precision control mechanisms ensure exact wall thickness from 22 SWG down to
+                        heavy-duty 10 SWG without variation.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================
+         5. FINAL CTA (FACTORY VISIT)
+         ========================================= -->
+    <section id="fs-visit-cta">
+        <div class="fs-visit-overlay"></div>
+        <div class="container position-relative z-index-2 fs-visit-content" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Witness Engineering In Action</h2>
+            <p>We invite our esteemed clients to visit our advanced manufacturing facility. See firsthand how raw steel
+                is forged into flawless tubes through our zero-defect production lines.</p>
+            <a href="mailto:info@falconsteel.com" class="fs-btn-massive">
+                Schedule A Plant Tour <i class="fa-solid fa-calendar-check ms-2"></i>
+            </a>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- =========================================
+         SECTION 11: MEGA FOOTER
+         ========================================= -->
+    <footer id="fs-footer">
+        <div class="fs-footer-top-border"></div> <!-- Glowing top border -->
+
+        <div class="container pt-5 pb-4">
+            <div class="row gy-5">
+
+                <!-- Col 1: Brand Info -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <a href="#" class="fs-footer-logo">
+                        <img src="assets/images/logo/falcon-logo.PNG" alt="Falcon Steel Logo">
+                    </a>
+                    <p class="fs-footer-about">India’s premier manufacturer of high-grade Stainless Steel Round, Square,
+                        Rectangle & Oval Tubes. Forging strength, engineering precision, and delivering excellence since
+                        our inception.</p>
+                    <div class="fs-footer-socials">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="col-lg-2 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="fs-footer-heading">Quick Links</h4>
+                    <ul class="fs-footer-links">
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about-us.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="ss-roud-tubes-and-pipes.html"><i class="fa-solid fa-chevron-right"></i>
+                                Products</a></li>
+                        <li><a href="quality.html"><i class="fa-solid fa-chevron-right"></i> Quality Assurance</a></li>
+                        <li><a href="contact-us.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Products Links -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="fs-footer-heading">Our Products</h4>
+                    <ul class="fs-footer-links">
+                        <li><a href="ss-roud-tubes-and-pipes.html"><i class="fa-solid fa-chevron-right"></i> SS Round
+                                Tubes</a></li>
+                        <li><a href="ss-roud-tubes-and-pipes.html"><i class="fa-solid fa-chevron-right"></i> SS Square
+                                Tubes</a></li>
+                        <li><a href="ss-roud-tubes-and-pipes.html"><i class="fa-solid fa-chevron-right"></i> SS
+                                Rectangle Tubes</a></li>
+                        <li><a href="ss-roud-tubes-and-pipes.html"><i class="fa-solid fa-chevron-right"></i> SS Oval
+                                Tubes</a></li>
+                        <li><a href="ss-roud-tubes-and-pipes.html"><i class="fa-solid fa-chevron-right"></i> Custom SS
+                                Profiles</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact Info -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <h4 class="fs-footer-heading">Contact Info</h4>
+                    <ul class="fs-footer-contact">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>123 Industrial Area, Phase 1,<br>New Delhi, India 110020</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+91 98961 88840<br>+91 97291 88840</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>@falconsteel000@gmail.com<br>sales@falconsteel.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="fs-footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p>&copy; 2026 Falcon Stainless Steel. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap & Plugins JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.css"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize Animate On Scroll
+        AOS.init({
+            once: true, // Animation happens only once while scrolling down
+            offset: 100 // Offset (in px) from the original trigger point
+        });
+
+        // Navbar Scroll Effect Script
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.getElementById("fs-main-header");
+
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 50) {
+                    header.classList.add("fs-scrolled");
+                } else {
+                    header.classList.remove("fs-scrolled");
+                }
+            });
+
+
+
+
+        });
+    </script>
+</body>
+
+</html>

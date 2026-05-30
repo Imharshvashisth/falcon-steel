@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falcon Stainless Steel | Strength in Every Length</title>
+
+    <!-- Google Fonts: Montserrat (Headings) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:ital,wght@0,400;0,700;0,800;1,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/index.css">
+
+    <style>
+        /* =========================================
+           ROOT VARIABLES & BASE STYLES
+           ========================================= */
+        :root {
+            --fs-bg-dark: #050505;
+            --fs-bg-glass: rgba(5, 5, 5, 0.85);
+            --fs-falcon-blue: #042D4B;
+            --fs-falcon-blue-light: #0A4A7A;
+            --fs-steel-silver: #C0C5CE;
+            --fs-text-white: #FFFFFF;
+            --fs-text-muted: #94A3B8;
+            --fs-accent-glow: #00D4FF;
+
+            --fs-font-heading: 'Montserrat', sans-serif;
+            --fs-font-body: 'Inter', sans-serif;
+
+            --fs-transition-fast: 0.3s ease;
+            --fs-transition-smooth: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--fs-bg-dark);
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-body);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--fs-font-heading);
+            font-weight: 700;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--fs-bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--fs-falcon-blue-light);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--fs-accent-glow);
+        }
+
+        /* General Section Subtitles & Titles */
+        .fs-page-subtitle {
+            color: var(--fs-accent-glow);
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .fs-page-subtitle.has-line::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            width: 30px;
+            height: 2px;
+            background: var(--fs-accent-glow);
+            transform: translateY(-50%);
+            box-shadow: 0 0 8px var(--fs-accent-glow);
+        }
+
+        .fs-page-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--fs-text-white);
+            line-height: 1.2;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .fs-page-title span {
+            color: var(--fs-accent-glow);
+            /* Removed hollow/webkit style */
+            font-style: normal;
+            /* Removed italic */
+        }
+
+        /* Solid Highlight Text */
+        .fs-text-glow {
+            color: var(--fs-accent-glow);
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+        }
+
+        /* =========================================
+           1. QUALITY HERO BANNER
+           ========================================= */
+        #fs-qa-hero {
+            position: relative;
+            width: 100vw;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('assets/images/backgrounds/freepik_img1-generate-exact-same-_2805666223.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            /* Parallax effect */
+            z-index: 1;
+        }
+
+        .fs-qa-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(5, 5, 5, 0.7) 0%, rgba(5, 5, 5, 1) 100%);
+            z-index: -1;
+        }
+
+        .fs-qa-hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .fs-qa-hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        /* =========================================
+           2. QUALITY PHILOSOPHY (SPLIT LAYOUT)
+           ========================================= */
+        #fs-qa-philosophy {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fs-qa-glow-bg {
+            position: absolute;
+            top: 20%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.04) 0%, transparent 60%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Overlapping Image Layout */
+        .fs-qa-image-stack {
+            position: relative;
+            padding-left: 50px;
+            padding-bottom: 50px;
+            z-index: 2;
+        }
+
+        .fs-qa-img-main {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            filter: brightness(0.85) contrast(1.1);
+            transition: var(--fs-transition-smooth);
+        }
+
+        .fs-qa-img-sub {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 55%;
+            border-radius: 20px;
+            border: 6px solid var(--fs-bg-dark);
+            box-shadow: 10px -10px 40px rgba(0, 0, 0, 0.6);
+            z-index: 2;
+            transition: var(--fs-transition-smooth);
+        }
+
+        .fs-qa-image-stack:hover .fs-qa-img-main {
+            transform: scale(1.02);
+            filter: brightness(1);
+        }
+
+        .fs-qa-image-stack:hover .fs-qa-img-sub {
+            transform: translate(15px, -15px) scale(1.05);
+            border-color: var(--fs-falcon-blue);
+            box-shadow: 15px -15px 50px rgba(0, 212, 255, 0.2);
+        }
+
+        /* Floating Zero Defect Badge */
+        .fs-zero-defect-badge {
+            position: absolute;
+            top: 40px;
+            right: -40px;
+            background: linear-gradient(135deg, var(--fs-bg-dark), var(--fs-falcon-blue));
+            color: #fff;
+            padding: 20px;
+            border-radius: 50%;
+            width: 160px;
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 3;
+            box-shadow: 0 15px 35px rgba(0, 212, 255, 0.2);
+            text-align: center;
+            animation: floatQA Badge 6s infinite ease-in-out;
+            border: 2px solid var(--fs-accent-glow);
+        }
+
+        @keyframes floatQA {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-15px) scale(1.05);
+            }
+        }
+
+        .fs-zero-defect-badge i {
+            font-size: 2.5rem;
+            color: var(--fs-accent-glow);
+            margin-bottom: 5px;
+        }
+
+        .fs-zero-defect-badge span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-family: var(--fs-font-heading);
+            line-height: 1.2;
+        }
+
+        /* Content Text */
+        .fs-qa-text {
+            color: var(--fs-text-muted);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 991px) {
+            .fs-qa-image-stack {
+                padding-left: 0;
+                padding-right: 20px;
+                margin-bottom: 80px;
+            }
+
+            .fs-qa-img-sub {
+                right: 0;
+                left: auto;
+                box-shadow: -10px -10px 40px rgba(0, 0, 0, 0.6);
+            }
+
+            .fs-zero-defect-badge {
+                right: -10px;
+                width: 120px;
+                height: 120px;
+            }
+
+            .fs-zero-defect-badge i {
+                font-size: 1.8rem;
+            }
+
+            .fs-zero-defect-badge span {
+                font-size: 0.6rem;
+            }
+
+            .fs-qa-hero-title {
+                font-size: 2.8rem;
+            }
+        }
+
+        /* =========================================
+           3. ADVANCED TESTING (BENTO GRID W/ IMAGES)
+           ========================================= */
+        #fs-testing-infrastructure {
+            padding: 100px 0;
+            background-color: #080C13;
+            position: relative;
+        }
+
+        .fs-testing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .fs-test-card {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 1;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Dark overlay for readability */
+        .fs-test-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.95));
+            z-index: -1;
+            transition: var(--fs-transition-smooth);
+        }
+
+        /* Glowing Hover Effect */
+        .fs-test-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--fs-accent-glow), transparent, var(--fs-falcon-blue));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: var(--fs-transition-smooth);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .fs-test-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 212, 255, 0.1);
+        }
+
+        .fs-test-card:hover::after {
+            background: linear-gradient(to bottom, rgba(5, 5, 5, 0.6), rgba(5, 5, 5, 0.9));
+            /* Reveal image on hover */
+        }
+
+        .fs-test-card:hover::before {
+            opacity: 1;
+        }
+
+        .fs-test-icon {
+            font-size: 2.8rem;
+            color: var(--fs-steel-silver);
+            margin-bottom: 25px;
+            transition: var(--fs-transition-smooth);
+            display: inline-block;
+        }
+
+        .fs-test-card:hover .fs-test-icon {
+            color: var(--fs-accent-glow);
+            transform: scale(1.1) translateY(-5px);
+            filter: drop-shadow(0 10px 15px rgba(0, 212, 255, 0.4));
+        }
+
+        .fs-test-title {
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-heading);
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            transition: var(--fs-transition-fast);
+        }
+
+        .fs-test-card:hover .fs-test-title {
+            color: var(--fs-accent-glow);
+        }
+
+        .fs-test-desc {
+            color: var(--fs-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 991px) {
+            .fs-testing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fs-testing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* =========================================
+           4. QUALITY PROCESS TIMELINE (W/ IMAGES)
+           ========================================= */
+        #fs-process-section {
+            padding: 120px 0;
+            background-color: var(--fs-bg-dark);
+            position: relative;
+            background-image:
+                linear-gradient(rgba(0, 212, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .fs-process-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 0%, var(--fs-bg-dark) 90%);
+            z-index: 0;
+        }
+
+        .fs-process-wrapper {
+            position: relative;
+            max-width: 900px;
+            margin: 60px auto 0 auto;
+            z-index: 2;
+        }
+
+        .fs-process-wrapper::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            top: 0;
+            bottom: 0;
+            left: 50px;
+            border-radius: 4px;
+        }
+
+        .fs-process-item {
+            position: relative;
+            padding-left: 120px;
+            margin-bottom: 60px;
+        }
+
+        .fs-process-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* The Animated Glowing Dot */
+        .fs-process-dot {
+            position: absolute;
+            left: 36px;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--fs-bg-dark);
+            border: 4px solid var(--fs-accent-glow);
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 0 15px var(--fs-accent-glow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--fs-transition-smooth);
+        }
+
+        .fs-process-item:hover .fs-process-dot {
+            background: var(--fs-accent-glow);
+            transform: scale(1.2);
+            box-shadow: 0 0 25px var(--fs-accent-glow);
+        }
+
+        /* Number inside dot */
+        .fs-process-dot::before {
+            content: attr(data-step);
+            font-family: var(--fs-font-heading);
+            font-weight: 800;
+            font-size: 0.9rem;
+            color: var(--fs-text-white);
+            position: absolute;
+            transition: var(--fs-transition-fast);
+        }
+
+        .fs-process-item:hover .fs-process-dot::before {
+            color: var(--fs-bg-dark);
+        }
+
+        .fs-process-content {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            transition: var(--fs-transition-smooth);
+            position: relative;
+        }
+
+        .fs-process-item:hover .fs-process-content {
+            background: rgba(0, 212, 255, 0.05);
+            border-color: rgba(0, 212, 255, 0.3);
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .fs-process-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+        }
+
+        .fs-process-title {
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-heading);
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .fs-process-desc {
+            color: var(--fs-text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .fs-process-wrapper::after {
+                left: 20px;
+            }
+
+            .fs-process-dot {
+                left: 6px;
+            }
+
+            .fs-process-item {
+                padding-left: 70px;
+            }
+
+            .fs-process-img {
+                width: 100%;
+                height: 180px;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* =========================================
+           5. GLOBAL STANDARDS & COMPLIANCE (W/ IMAGE)
+           ========================================= */
+        #fs-compliance-section {
+            padding: 100px 0;
+            background-color: #080C13;
+        }
+
+        .fs-comp-image {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            object-fit: cover;
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .fs-compliance-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .fs-compliance-badge {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-family: var(--fs-font-heading);
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--fs-steel-silver);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: var(--fs-transition-smooth);
+            cursor: default;
+        }
+
+        .fs-compliance-badge:hover {
+            background: var(--fs-falcon-blue);
+            color: var(--fs-accent-glow);
+            border-color: var(--fs-accent-glow);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 991px) {
+            .fs-comp-image-wrapper {
+                margin-top: 50px;
+            }
+
+            .fs-comp-image {
+                min-height: 300px;
+            }
+        }
+
+        /* =========================================
+           6. FINAL CTA SECTION (PARALLAX)
+           ========================================= */
+        #fs-bottom-cta {
+            position: relative;
+            padding: 100px 0;
+            background-image: url('https://images.unsplash.com/photo-1541888079870-8b43bc09139f?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .fs-cta-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(4, 45, 75, 0.85);
+            backdrop-filter: blur(5px);
+            z-index: -1;
+        }
+
+        .fs-cta-content h2 {
+            color: var(--fs-text-white);
+            font-family: var(--fs-font-heading);
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .fs-cta-content p {
+            color: var(--fs-steel-silver);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        .fs-btn-massive {
+            background: var(--fs-text-white);
+            color: var(--fs-falcon-blue);
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-family: var(--fs-font-heading);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--fs-transition-smooth);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .fs-btn-massive:hover {
+            background: var(--fs-accent-glow);
+            color: var(--fs-bg-dark);
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .fs-cta-content h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+
+    <!-- Agent Sticker -->
+    <div class="falcon-agent-sticker-box">
+        <img src="assets/images/logo/agent-1.png" alt="Falcon Steel Agent">
+    </div>
+
+    <!-- FLOATING SOCIALS -->
+    <div class="fs-floating-socials">
+        <a href="tel:+919896188840" class="fs-social-btn fs-social-phone" title="Call Us">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+
+        <a href="mailto:falcoonsteel0001@gmail.com" class="fs-social-btn fs-social-email" title="Email Us">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <a href="https://wa.me/919896188840" class="fs-social-btn fs-social-whatsapp" title="WhatsApp Us"
+            target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- =========================================
+         SECTION 1: NAVBAR (HEADER)
+         ========================================= -->
+    <nav id="fs-main-header" class="navbar navbar-expand-lg fixed-top">
+        <div class="container" data-aos="fade-down" data-aos-duration="1000">
+            <!-- Logo with Clean Rounded White Half-Pill Shape -->
+            <a class="navbar-brand fs-logo-wrapper" href="index.html">
+                <img src="assets/images/logo/falcon-logo.PNG" alt="Falcon Steel Logo" class="fs-logo-img">
+            </a>
+
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#fsNavbarContent"
+                aria-controls="fsNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav Links -->
+            <div class="collapse navbar-collapse" id="fsNavbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item fs-nav-item">
+                        <a class="nav-link fs-nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item fs-nav-item">
+                        <a class="nav-link fs-nav-link" href="about-us.html">About</a>
+                    </li>
+
+                    <!-- Dropdown for Products -->
+                    <li class="nav-item dropdown fs-nav-item fs-dropdown-wrapper">
+                        <a class="nav-link dropdown-toggle fs-nav-link" href="ss-roud-tubes-and-pipes.html"
+                            id="fsNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu fs-dropdown-menu" aria-labelledby="fsNavbarDropdown">
+                            <li><a class="dropdown-item fs-dropdown-item" href="ss-roud-tubes-and-pipes.html">SS Round
+                                    Tubes</a></li>
+                            <li><a class="dropdown-item fs-dropdown-item" href="ss-roud-tubes-and-pipes.html">SS Square
+                                    Tubes</a></li>
+                            <li><a class="dropdown-item fs-dropdown-item" href="ss-roud-tubes-and-pipes.html">SS
+                                    Rectangle Tubes</a></li>
+                            <li><a class="dropdown-item fs-dropdown-item" href="ss-roud-tubes-and-pipes.html">SS Oval
+                                    Tubes</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item fs-nav-item">
+                        <a class="nav-link fs-nav-link" href="quality.html">Quality</a>
+                    </li>
+                    <li class="nav-item fs-nav-item">
+                        <a class="nav-link fs-nav-link" href="plants-and-machinery.html">Machinery and plants</a>
+                    </li>
+                    <li class="nav-item fs-nav-item">
+                        <a class="nav-link fs-nav-link" href="contact-us.html">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Action Button -->
+                <div class="d-flex">
+                    <a href="contact-us.html" class="fs-btn-quote">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- =========================================
+         1. QUALITY HERO BANNER
+         ========================================= -->
+    <section id="fs-qa-hero">
+        <div class="fs-qa-hero-overlay"></div>
+        <div class="container fs-qa-hero-content" data-aos="zoom-in" data-aos-duration="1200">
+            <span class="fs-page-subtitle">Quality Assurance</span>
+            <h1 class="fs-qa-hero-title">Precision In <br><span class="fs-text-glow">Every Micron</span></h1>
+            <p class="fs-text-muted mx-auto" style="max-width: 700px; font-size: 1.2rem;">Our uncompromising commitment
+                to metallurgical excellence ensures that every Falcon Stainless Steel tube exceeds global industrial
+                standards.</p>
+        </div>
+    </section>
+
+    <!-- =========================================
+         2. QUALITY PHILOSOPHY (SPLIT LAYOUT)
+         ========================================= -->
+    <section id="fs-qa-philosophy">
+        <div class="fs-qa-glow-bg"></div>
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- Left Side: Content -->
+                <div class="col-lg-6 pe-lg-5 mb-5 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
+                    <span class="fs-page-subtitle has-line">Our Commitment</span>
+                    <h2 class="fs-page-title">Engineering <br><span>Perfection</span></h2>
+
+                    <p class="fs-qa-text">
+                        At Falcon Stainless Steel, quality is not a department; it is the core of our manufacturing DNA.
+                        We employ a <strong>Zero-Tolerance Quality Policy</strong> across our entire production cycle.
+                    </p>
+                    <p class="fs-qa-text">
+                        Equipped with a highly sophisticated, fully-automated in-house metallurgical testing laboratory,
+                        we monitor the chemical composition, mechanical strength, and physical properties of our steel
+                        at every stage—from raw material induction to the final dispatch.
+                    </p>
+
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <i class="fa-solid fa-check-circle fs-4" style="color: var(--fs-accent-glow);"></i>
+                            <span style="font-size: 1.1rem; font-weight: 600;">100% Traceability & Documentation</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="fa-solid fa-check-circle fs-4" style="color: var(--fs-accent-glow);"></i>
+                            <span style="font-size: 1.1rem; font-weight: 600;">ISO 9001:2015 Certified Facilities</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Overlapping Image Stack -->
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="fs-qa-image-stack">
+                        <!-- Floating Zero Defect Badge -->
+                        <div class="fs-zero-defect-badge">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Zero Defect<br>Policy</span>
+                        </div>
+
+                        <!-- Main Large Lab Image -->
+                        <img src="https://www.apsteel.in/assets/images/other-images/quality-lft.jpg"
+                            alt="Advanced Testing Laboratory" class="fs-qa-img-main">
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         3. ADVANCED TESTING INFRASTRUCTURE (BENTO WITH IMAGES)
+         ========================================= -->
+    <section id="fs-testing-infrastructure">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="fs-page-subtitle mx-auto">Testing Capabilities</span>
+                <h2 class="fs-page-title">Advanced <span>Infrastructure</span></h2>
+                <p class="fs-text-muted mx-auto" style="max-width: 600px;">Our NABL-accredited in-house laboratory is
+                    equipped with world-class testing instruments to validate every parameter of our stainless steel.
+                </p>
+            </div>
+
+            <div class="fs-testing-grid">
+
+                <!-- Test Card 1 (with background image) -->
+                <div class="fs-test-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=600&auto=format&fit=crop');"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <i class="fa-solid fa-flask-vial fs-test-icon"></i>
+                    <h3 class="fs-test-title">Chemical Analysis</h3>
+                    <p class="fs-test-desc">Using Optical Emission Spectrometers (OES) to accurately determine the exact
+                        elemental composition and assure raw material purity.</p>
+                </div>
+
+                <!-- Test Card 2 (with background image) -->
+                <div class="fs-test-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=600&auto=format&fit=crop');"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <i class="fa-solid fa-water fs-test-icon"></i>
+                    <h3 class="fs-test-title">Hydrostatic Test</h3>
+                    <p class="fs-test-desc">100% of our tubes undergo high-pressure hydrostatic testing to ensure
+                        absolute leak-proof integrity under extreme operational conditions.</p>
+                </div>
+
+                <!-- Test Card 3 (with background image) -->
+                <div class="fs-test-card"
+                    style="background-image: url('//images.unsplash.com/photo-1565514020179-026b92b84bb6?q=80&w=600&auto=format&fit=crop');"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <i class="fa-solid fa-wave-square fs-test-icon"></i>
+                    <h3 class="fs-test-title">Eddy Current Testing</h3>
+                    <p class="fs-test-desc">A non-destructive electromagnetic evaluation process used to detect the
+                        minutest sub-surface flaws, cracks, or discontinuities.</p>
+                </div>
+
+                <!-- Test Card 4 (with background image) -->
+                <div class="fs-test-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1534234475928-8744040a463a?q=80&w=600&auto=format&fit=crop');"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <i class="fa-solid fa-weight-hanging fs-test-icon"></i>
+                    <h3 class="fs-test-title">Mechanical Testing</h3>
+                    <p class="fs-test-desc">Universal Testing Machines (UTM) perform rigorous Tensile, Yield,
+                        Elongation, Flattening, and Flaring tests to verify structural strength.</p>
+                </div>
+
+                <!-- Test Card 5 (with background image) -->
+                <div class="fs-test-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1574689211272-bc1550ce1856?q=80&w=600&auto=format&fit=crop');"
+                    data-aos="fade-up" data-aos-delay="500">
+                    <i class="fa-solid fa-microscope fs-test-icon"></i>
+                    <h3 class="fs-test-title">Microstructure Analysis</h3>
+                    <p class="fs-test-desc">Advanced metallurgical microscopes examine grain structure to prevent
+                        carbide precipitation and guarantee optimal material behavior.</p>
+                </div>
+
+                <!-- Test Card 6 (with background image) -->
+                <div class="fs-test-card"
+                    style="background-image: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=600&auto=format&fit=crop');"
+                    data-aos="fade-up" data-aos-delay="600">
+                    <i class="fa-solid fa-ruler-combined fs-test-icon"></i>
+                    <h3 class="fs-test-title">Dimensional & Surface QA</h3>
+                    <p class="fs-test-desc">Laser micrometers and surface roughness testers ensure absolute dimensional
+                        precision and perfect mirror/matt finishing.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         4. QUALITY PROCESS TIMELINE (W/ THUMBNAIL IMAGES)
+         ========================================= -->
+    <section id="fs-process-section">
+        <div class="fs-process-overlay"></div>
+        <div class="container position-relative z-index-2">
+
+            <div class="text-center" data-aos="fade-up">
+                <span class="fs-page-subtitle mx-auto">Workflow</span>
+                <h2 class="fs-page-title">The 4-Step <span>Assurance</span></h2>
+            </div>
+
+            <div class="fs-process-wrapper">
+
+                <!-- Step 1 -->
+                <div class="fs-process-item" data-aos="fade-up">
+                    <div class="fs-process-dot" data-step="1"></div>
+                    <div class="fs-process-content d-flex flex-column flex-md-row align-items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=400&auto=format&fit=crop"
+                            alt="Raw Material" class="fs-process-img d-none d-md-block">
+                        <div>
+                            <h4 class="fs-process-title">Raw Material Inspection</h4>
+                            <p class="fs-process-desc">Quality begins at the source. All incoming steel coils and
+                                billets are strictly verified for chemical composition and mechanical properties before
+                                being approved for production.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="fs-process-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="fs-process-dot" data-step="2"></div>
+                    <div class="fs-process-content d-flex flex-column flex-md-row align-items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop"
+                            alt="In Process Check" class="fs-process-img d-none d-md-block">
+                        <div>
+                            <h4 class="fs-process-title">In-Process Monitoring</h4>
+                            <p class="fs-process-desc">During forming, welding (TIG/ERW), and sizing, our automated
+                                sensors and QA engineers continuously monitor dimensional tolerances and weld bead
+                                integrity in real-time.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="fs-process-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="fs-process-dot" data-step="3"></div>
+                    <div class="fs-process-content d-flex flex-column flex-md-row align-items-center gap-4">
+                        <img src="https://www.apsteel.in/assets/images/other-images/quality-lft.jpg" alt="Final Testing"
+                            class="fs-process-img d-none d-md-block">
+                        <div>
+                            <h4 class="fs-process-title">Non-Destructive & Destructive Testing</h4>
+                            <p class="fs-process-desc">The formed tubes are subjected to 100% Eddy Current and
+                                Hydrostatic tests, followed by random batch sampling for destructive mechanical and
+                                metallurgical validations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="fs-process-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="fs-process-dot" data-step="4"></div>
+                    <div class="fs-process-content d-flex flex-column flex-md-row align-items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1555529733-0e670560f7e1?q=80&w=400&auto=format&fit=crop"
+                            alt="Dispatch Verification" class="fs-process-img d-none d-md-block">
+                        <div>
+                            <h4 class="fs-process-title">Final Dispatch Verification</h4>
+                            <p class="fs-process-desc">Before packing, a final visual, surface roughness, and
+                                dimensional check is performed. Only flawless materials receive the Falcon Certified
+                                seal and marking for dispatch.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================
+         5. GLOBAL STANDARDS & COMPLIANCE (WITH IMAGE)
+         ========================================= -->
+    <section id="fs-compliance-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left: Text and Badges -->
+                <div class="col-lg-6" data-aos="fade-right">
+                    <span class="fs-page-subtitle">Compliance</span>
+                    <h2 class="fs-page-title">Global <br><span>Standards</span></h2>
+                    <p class="fs-text-muted mb-4" style="font-size: 1.1rem; line-height: 1.7;">
+                        Our manufacturing processes align with the strictest international codes. This ensures that
+                        every Falcon Steel product is robust, safe, and export-ready for the most demanding global
+                        industrial applications.
+                    </p>
+                    <div class="fs-compliance-grid justify-content-start">
+                        <div class="fs-compliance-badge">ASTM A249</div>
+                        <div class="fs-compliance-badge">ASTM A269</div>
+                        <div class="fs-compliance-badge">ASTM A312</div>
+                        <div class="fs-compliance-badge">ASTM A554</div>
+                        <div class="fs-compliance-badge">ASME SA249</div>
+                        <div class="fs-compliance-badge">EN 10217-7</div>
+                        <div class="fs-compliance-badge">DIN 17457</div>
+                    </div>
+                </div>
+
+                <!-- Right: Premium Industrial Image -->
+                <div class="col-lg-6 fs-comp-image-wrapper" data-aos="fade-left" data-aos-delay="200">
+                    <img src="https://www.apsteel.in/assets/images/other-images/quality-lft.jpg"
+                        alt="Steel Pipes Standards" class="fs-comp-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         6. FINAL CTA (PARALLAX SECTION)
+         ========================================= -->
+    <section id="fs-bottom-cta">
+        <div class="fs-cta-overlay"></div>
+        <div class="container position-relative z-index-2 fs-cta-content" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Experience Flawless Quality</h2>
+            <p>Require certified, high-grade stainless steel for your critical project? Reach out to our technical team
+                for detailed Material Test Certificates (MTC) and samples.</p>
+            <a href="tel:+919876543210" class="fs-btn-massive">
+                Consult Our Experts <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- =========================================
+         SECTION 11: MEGA FOOTER
+         ========================================= -->
+    <footer id="fs-footer">
+        <div class="fs-footer-top-border"></div> <!-- Glowing top border -->
+
+        <div class="container pt-5 pb-4">
+            <div class="row gy-5">
+
+                <!-- Col 1: Brand Info -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <a href="#" class="fs-footer-logo">
+                        <img src="assets/images/logo/falcon-logo.PNG" alt="Falcon Steel Logo">
+                    </a>
+                    <p class="fs-footer-about">India’s premier manufacturer of high-grade Stainless Steel Round, Square,
+                        Rectangle & Oval Tubes. Forging strength, engineering precision, and delivering excellence since
+                        our inception.</p>
+                    <div class="fs-footer-socials">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="col-lg-2 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="fs-footer-heading">Quick Links</h4>
+                    <ul class="fs-footer-links">
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about-us.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="ss-roud-tubes-and-pipes.html"><i class="fa-solid fa-chevron-right"></i>
+                                Products</a></li>
+                        <li><a href="quality.html"><i class="fa-solid fa-chevron-right"></i> Quality Assurance</a></li>
+                        <li><a href="contact-us.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Products Links -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="fs-footer-heading">Our Products</h4>
+                    <ul class="fs-footer-links">
+                        <li><a href="ss-roud-tubes-and-pipes.html"><i class="fa-solid fa-chevron-right"></i> SS Round
+                                Tubes</a></li>
+                        <li><a href="ss-roud-tubes-and-pipes.html"><i class="fa-solid fa-chevron-right"></i> SS Square
+                                Tubes</a></li>
+                        <li><a href="ss-roud-tubes-and-pipes.html"><i class="fa-solid fa-chevron-right"></i> SS
+                                Rectangle Tubes</a></li>
+                        <li><a href="ss-roud-tubes-and-pipes.html"><i class="fa-solid fa-chevron-right"></i> SS Oval
+                                Tubes</a></li>
+                        <li><a href="ss-roud-tubes-and-pipes.html"><i class="fa-solid fa-chevron-right"></i> Custom SS
+                                Profiles</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact Info -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <h4 class="fs-footer-heading">Contact Info</h4>
+                    <ul class="fs-footer-contact">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>123 Industrial Area, Phase 1,<br>New Delhi, India 110020</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+91 98961 88840<br>+91 97291 88840</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>@falconsteel000@gmail.com<br>sales@falconsteel.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="fs-footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p>&copy; 2026 Falcon Stainless Steel. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap & Plugins JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.css"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize Animate On Scroll
+        AOS.init({
+            once: true, // Animation happens only once while scrolling down
+            offset: 100 // Offset (in px) from the original trigger point
+        });
+
+        // Navbar Scroll Effect Script
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.getElementById("fs-main-header");
+
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 50) {
+                    header.classList.add("fs-scrolled");
+                } else {
+                    header.classList.remove("fs-scrolled");
+                }
+            });
+
+
+
+
+        });
+    </script>
+</body>
+
+</html>
